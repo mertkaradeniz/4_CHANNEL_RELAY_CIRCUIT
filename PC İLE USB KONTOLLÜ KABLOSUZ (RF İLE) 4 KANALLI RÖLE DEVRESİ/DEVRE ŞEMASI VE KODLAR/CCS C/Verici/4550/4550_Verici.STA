@@ -1,0 +1,115 @@
+
+ROM used:   4914/16384 (15%)
+            4914/16384 (15%) including unused fragments
+
+            0.8 Average locations per line
+            8.0 Average locations per statement
+
+RAM used:   571/2048 (28%) at main() level
+            609/2048 (30%) worst case
+
+Stack used: 1 worst case (0 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  115    47   8  4550_Verici.c
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\devices\18f4550.h
+   37     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\stdio.h
+  423     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\string.h
+   32     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\stddef.h
+   28     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\ctype.h
+  228     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\pic18_usb.h
+  328     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\usb_hw_layer.h
+  237     0   0  ..\..\..\..\..\HAVAYA YAZI YAZMA DEVRESÝ\TASARIM\CCS C\Verici\4550\USB_Driver.h
+ 1103     0   0  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\usb.h
+ 1177   247  40  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\usb.c
+ 1403   317  52  ..\..\..\..\..\..\..\..\Program Files\PICC\drivers\pic18_usb.c
+----- -----
+ 5932   611 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0      8   0    0             @PUTCHARI_BIU_1
+0     32   0    0             @const833
+0     66   1    0             @const839
+0     48   0    0             @const845
+0     18   0    0             @const848
+0     18   0    0             @const852
+0     58   1    0             @const856
+0     18   0    0             @const859
+0     18   0    0             @const862
+0     34   0    0             @const867
+0     88   1    0             @const871
+0     92   1    4   139  4.3  usb_kbhit
+0     34   0    5             @MUL1616
+0     88   1    4   139  4.3  usb_tbe
+0     40   0    1   145  3.2  usb_detach
+0     34   0    0   136  2.2  usb_attach
+0      6   0    0    16  1.0  usb_init_cs
+0     34   0    1   367  5.2  usb_task
+0     14   0    0    61  2.5  usb_init
+0    292   3    9  1092  5.4  usb_flush_in
+0    266   3    9   914  5.0  usb_flush_out
+0    276   3   12   652  5.9  usb_get_packet_buffer
+0     72   1    5   154  3.9  usb_get_packet
+0    102   1    6   258  4.6  usb_stall_ep
+0    100   1    6   266  4.6  usb_unstall_ep
+0    118   1    5   373  6.0  usb_endpoint_stalled
+0     26   0    1    94  2.7  usb_set_address
+0    538   5   12  1774 10.4  usb_set_configured
+0    112   1    5   199  3.2  usb_disable_endpoint
+0     30   0    1    99  3.0  usb_disable_endpoints
+0      4   0    0    61  4.0  usb_clear_trn
+0    126   1    2   662  6.8  usb_isr
+0      6   0    0    43  2.0  usb_isr_sof
+0     42   0    0   357  4.2  usb_isr_rst
+0     32   0    0   508  4.0  usb_init_ep0_setup
+0      8   0    0    74  2.8  usb_isr_uerr
+0     10   0    0    82  2.8  usb_isr_uidle
+0     16   0    0   102  3.3  usb_isr_activity
+0     14   0    0   151  3.9  usb_isr_stall
+0      6   0    1    30  1.7  usb_request_send_response
+0      4   0    0    22  1.2  usb_request_stall
+0    248   3    2  3177  9.3  usb_isr_tok_dne
+0      8   0    0    29  1.9  usb_enumerated
+0     12   0    0    52  2.1  usb_wait_for_enumeration
+0     44   0    3   255  4.0  usb_token_reset
+0     98   1    3   274  5.9  usb_endpoint_is_valid
+0     36   0    1   158  3.1  usb_isr_tok_in_dne
+0     10   0    1    53  1.9  usb_isr_tok_out_dne
+0     50   1    0   375  6.4  usb_isr_tok_setup_dne
+0    188   2    0  1454  8.3  usb_isr_tkn_setup_StandardDevice
+0    180   2    3  1002  7.8  usb_isr_tkn_setup_StandardInterface
+0    108   1    0   753  5.8  usb_isr_tkn_setup_StandardEndpoint
+0     12   0    0   105  3.8  usb_isr_tkn_setup_ClassInterface
+0    336   3    1  1492  8.8  usb_Get_Descriptor
+0     14   0    0    76  1.8  usb_finish_set_address
+0    188   2    4   671  8.3  usb_copy_desc_seg_to_ep
+0     34   0    0             @goto11974
+0     20   0    0    86  1.3  giris_cikis
+0     16   0    0    57  1.5  Rf_Paket_H_Uyandir
+0    218   2    0   854  4.8  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               47
+    Statements              611
+    Comments                2339
+    Volume (V)              36092
+    Difficulty (D)          206.6
+    Effort to implement (E) 7456717
+    Time to implement (T)   115 hours, 4 minutes
+    Est Delivered Bugs (B)  13
+    Cyclomatic Complexity   112
+    Maintainability (MI)    44
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     4  0  
+00008-00094   142  0  
+00096-07FFE  4764  27854  
+
+
+

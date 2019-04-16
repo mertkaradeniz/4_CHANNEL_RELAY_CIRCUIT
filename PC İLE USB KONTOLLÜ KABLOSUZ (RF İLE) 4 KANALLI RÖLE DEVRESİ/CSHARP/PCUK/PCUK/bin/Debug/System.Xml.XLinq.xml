@@ -1,0 +1,2647 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Xml.XLinq</name>
+    </assembly>
+    <members>
+        <member name="T:System.Xml.XLinq.XName">
+            <summary>
+            Represents an expanded name for an <see cref="T:System.Xml.XLinq.XElement"/> or <see cref="T:System.Xml.XLinq.XAttribute"/>
+            in the string format "{namespace}localname".
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.GetHashCode">
+            <summary>
+            Serves as a hash function for <see cref="T:System.Xml.XLinq.XName"/>. GetHashCode is suitable 
+            for use in hashing algorithms and data structures like a hash table.  
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Xml.XLinq.XName"/> is equal to the current <see cref="T:System.Xml.XLinq.XName"/>.
+            For two <see cref="T:System.Xml.XLinq.XName"/>'s to be equal they must have the same expanded name.
+            </summary>
+            <param name="obj">An XName to compare.</param>
+            <returns>
+            true if the two <see cref="T:System.Xml.XLinq.XName"/>s are equal.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.ToString">
+            <summary>
+            Outputs the expanded name of this XName. <seealso cref="P:System.Xml.XLinq.XName.ExpandedName"/>
+            </summary>
+            <returns>
+            A string containing the expanded XML Name in the format {namespace}localname.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.Get(System.String)">
+            <summary>
+            Returns an <see cref="T:System.Xml.XLinq.XName"/> created from the passed in expanded name.
+            </summary>
+            <param name="expandedName">
+            A string containing an expanded XML Name int he format {namespace}localname.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XName"/> constructed from the passed in expanded name.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.Get(System.String,System.String)">
+            <summary>
+            Get an <see cref="T:System.Xml.XLinq.XName"/> object instance from a local name <seealso cref="P:System.Xml.XLinq.XName.LocalName"/> and an
+            XML namespace name. <seealso cref="P:System.Xml.XLinq.XName.NamespaceName"/>
+            </summary>
+            <param name="localName">An XML local/unqualified name.</param>
+            <param name="namespaceName">An XML namespace name.</param>
+            <returns>An XName created from the passed in XML namespace name and local name.</returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.op_Implicit(System.String)~System.Xml.XLinq.XName">
+            <summary>
+            Implicitly converts a string formatted in expanded XML Name format ({namespace}localname) to an XName. <seealso cref="P:System.Xml.XLinq.XName.ExpandedName"/>
+            </summary>
+            <param name="s">The string representing the XML Name in expanded XML Name format.</param>
+            <returns>An XName constructed from the expanded XML Name.</returns>        
+        </member>
+        <member name="M:System.Xml.XLinq.XName.op_Equality(System.Xml.XLinq.XName,System.Xml.XLinq.XName)">
+            <summary>
+            Compares two <see cref="T:System.Xml.XLinq.XName"/>s for equality.
+            </summary>
+            <param name="n1">The first XName to compare.</param>
+            <param name="n2">The second XName to compare.</param>
+            <returns>True if the two <see cref="T:System.Xml.XLinq.XName"/>s are equal.</returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XName.op_Inequality(System.Xml.XLinq.XName,System.Xml.XLinq.XName)">
+            <summary>
+            Compares two <see cref="T:System.Xml.XLinq.XName"/>s for inequality.
+            </summary>
+            <param name="n1">The first XName to compare.</param>
+            <param name="n2">The second XName to compare.</param>
+            <returns>True if the two <see cref="T:System.Xml.XLinq.XName"/>s are not equal.</returns>
+        </member>
+        <member name="P:System.Xml.XLinq.XName.ExpandedName">
+            <summary>
+            The expanded XML name as a string in the format: {namespace}localname.
+            </summary>
+            <seealso cref="P:System.Xml.XLinq.XName.NamespaceName"/>
+            <seealso cref="P:System.Xml.XLinq.XName.LocalName"/>
+        </member>
+        <member name="P:System.Xml.XLinq.XName.LocalName">
+            <summary>
+            The local/unqualified part of the XName.
+            </summary>
+            <seealso cref="P:System.Xml.XLinq.XName.ExpandedName"/>
+        </member>
+        <member name="P:System.Xml.XLinq.XName.NamespaceName">
+            <summary>
+            The XML Namespace part of the XName.
+            </summary>
+            <seealso cref="P:System.Xml.XLinq.XName.ExpandedName"/>
+        </member>
+        <member name="T:System.Xml.XLinq.XNode">
+            <summary>
+            An XNode represents represents any item that is represented as a "node" in the tree
+            of XML.  For example, <see cref="T:System.Xml.XLinq.XElement"/>s, <see cref="T:System.Xml.XLinq.XComment"/>s, and <see cref="T:System.Xml.XLinq.XDocument"/>s
+            are examples of <see cref="T:System.Xml.XLinq.XNode"/>s.  Note that an <see cref="T:System.Xml.XLinq.XAttribute"/> is not an <see cref="T:System.Xml.XLinq.XNode"/>.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)">
+            <overloads>
+             AddAfterThis takes the content passed in and adds it as a child immediately after this <see cref="T:System.Xml.XLinq.XNode"/>. The
+             content can be either a single <see cref="T:System.Object"/>, an array of <see cref="T:System.Object"/>, an <see cref="T:System.Collections.IEnumerable"/>
+             over content objects, a parameter list of content objects, or null. 
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)"/>
+             </overloads>
+             <summary>
+             Takes a content object and adds it as a child immediately after this <see cref="T:System.Xml.XLinq.XNode"/>.
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)"/>
+             </summary>
+             <param name="content">
+             A content object containing the string, child node, <see cref="T:System.Collections.IEnumerable"/>, 
+             or array of content objects to be added after this <see cref="T:System.Xml.XLinq.XNode"/>
+             </param>
+             <exception cref="T:System.InvalidOperationException">Thrown if parent is null.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object[])">
+            <summary>
+            Takes a parameter list of content objects and adds them as children immediately after this <see cref="T:System.Xml.XLinq.XNode"/>.
+            <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+            <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object[])"/>
+            <seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object[])"/>
+            </summary>
+            <param name="content">
+            A parameter list of content objects to be added after this <see cref="T:System.Xml.XLinq.XNode"/>.
+            </param>
+            <exception cref="T:System.InvalidOperationException">Thrown if parent is null.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)">
+            <overloads>
+             AddBeforeThis takes the content passed in and adds it as a child immediately before this <see cref="T:System.Xml.XLinq.XNode"/>. The
+             content can be either a single <see cref="T:System.Object"/> or an array of <see cref="T:System.Object"/>, an <see cref="T:System.Collections.IEnumerable"/>
+             over content objects, a parameter list of content objects, or null.
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)"/>
+             </overloads>
+             <summary>
+             Takes a content object and adds it as a child immediately before this <see cref="T:System.Xml.XLinq.XNode"/>. 
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+             </summary>
+             <param name="content">
+             A content object containing the string, child node, <see cref="T:System.Collections.IEnumerable"/>, 
+             or array of content objects to be added before this <see cref="T:System.Xml.XLinq.XNode"/>
+             </param>
+             <exception cref="T:System.InvalidOperationException">Thrown if parent is null.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object[])">
+            <summary>
+            Takes a parameter list of content objects and adds them as children immedately before this <see cref="T:System.Xml.XLinq.XNode"/>.
+            <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+            <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object[])"/>
+            <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object[])"/>
+            </summary>
+            <param name="content">
+            A parameter list of content objects.
+            </param>
+            <exception cref="T:System.InvalidOperationException">Thrown if parent is null.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.ReadFrom(System.Xml.XmlReader)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XNode"/> from an <see cref="T:System.Xml.XmlReader"/>.  The runtime type of the <see cref="T:System.Xml.XLinq.XNode"/> is determined by
+            the <see cref="P:System.Xml.XLinq.XNode.NodeType"/> of the first node encountered in the reader.
+            <seealso cref="P:System.Xml.XLinq.XNode.NodeType"/>
+            </summary>
+            <param name="r">An <see cref="T:System.Xml.XmlReader"/> positioned at the node to read into this <see cref="T:System.Xml.XLinq.XNode"/></param>
+            <returns>An <see cref="T:System.Xml.XLinq.XNode"/></returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the <see cref="T:System.Xml.XmlReader"/> is not positioned on a recognized node type.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.Remove">
+            <summary>
+            Removes this XNode from the underlying XML tree.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown if the parent is null.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.ToString">
+            <summary>
+            Provides a formatted string.<seealso cref="P:System.Xml.XLinq.XNode.Xml"/>
+            </summary>
+            <returns>A formatted XML string.</returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XNode.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Write this <see cref="T:System.Xml.XLinq.XNode"/> to an <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">The <see cref="T:System.Xml.XmlWriter"/> to write this XNode into.</param>
+        </member>
+        <member name="P:System.Xml.XLinq.XNode.Parent">
+            <summary>
+            The parent <see cref="T:System.Xml.XLinq.XElement"/> of this <see cref="T:System.Xml.XLinq.XNode"/>, or null if this
+            <see cref="T:System.Xml.XLinq.XNode"/> has no parent <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="P:System.Xml.XLinq.XNode.Document"/>
+            </summary>
+        </member>
+        <member name="P:System.Xml.XLinq.XNode.Document">
+            <summary>
+            The <see cref="T:System.Xml.XLinq.XDocument"/> associated with this <see cref="T:System.Xml.XLinq.XNode"/>.
+            <seealso cref="P:System.Xml.XLinq.XNode.Parent"/>
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XLinq.XDocument"/> associated with this <see cref="T:System.Xml.XLinq.XNode"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XNode.NodeType">
+            <summary>
+            The <see cref="T:System.Xml.XmlNodeType"/> for this <see cref="T:System.Xml.XLinq.XNode"/>.  The <see cref="T:System.Xml.XmlNodeType"/> specifies what type of
+            <see cref="T:System.Xml.XLinq.XNode"/> this is.  For example: Element, Attribute, Processing Instruction, etc.
+            </summary>
+        </member>
+        <member name="P:System.Xml.XLinq.XNode.Xml">
+            <summary>
+            The raw, unformatted XML for this <see cref="T:System.Xml.XLinq.XNode"/>.
+            </summary>
+        </member>
+        <member name="T:System.Xml.XLinq.XCharacterNode">
+            <summary>
+            <see cref="T:System.Xml.XLinq.XCharacterNode"/> is a type of <see cref="T:System.Xml.XLinq.XNode"/> that contains characters (text).  For example,
+            an <see cref="T:System.Xml.XLinq.XCData"/> (CData Node) derives from <see cref="T:System.Xml.XLinq.XCharacterNode"/>.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XCharacterNode.Equals(System.Object)">
+            <summary>
+            Returns true if the value of this <see cref="T:System.Xml.XLinq.XCharacterNode"/> equals
+            the value of passed in <see cref="T:System.Xml.XLinq.XCharacterNode"/>
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Xml.XLinq.XCharacterNode"/> to compare this <see cref="T:System.Xml.XLinq.XCharacterNode"/>
+            to.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XCharacterNode.GetHashCode">
+            <summary>
+            Serves as a hash function for <see cref="T:System.Xml.XLinq.XCharacterNode"/>s. 
+            GetHashCode is suitable for use in hashing 
+            algorithms and data structures like a hash table.
+            </summary>
+        </member>
+        <member name="T:System.Xml.XLinq.XCData">
+            <summary>
+            Represents a CDATA Section.  
+            </summary>
+            <remarks>
+            CDATA sections are used to quote or excape blocks of text from being interpreted as markup language.
+            </remarks>
+        </member>
+        <member name="M:System.Xml.XLinq.XCData.#ctor(System.String)">
+            <summary>
+            Creates a CDATA node from a string value.
+            </summary>
+            <param name="value">The string used to construct the <see cref="T:System.Xml.XLinq.XCData"/> node.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the string value passed in is null.</exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XCData.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Creates a CDATA node from an <see cref="T:System.Xml.XmlReader"/>.
+            </summary>
+            <param name="r">An <see cref="T:System.Xml.XmlReader"/> positioned at a CData node.</param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XmlReader"/> passed in is not positioned to a CDATA node (<see cref="F:System.Xml.XmlNodeType.CDATA"/>).
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XCData.CloneNode">
+            <summary>
+            Returns a copy of this <see cref="T:System.Xml.XLinq.XCData"/> node.
+            </summary>
+            <returns>A copy of this <see cref="T:System.Xml.XLinq.XCData"/> node.</returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XCData.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Write this <see cref="T:System.Xml.XLinq.XCData"/> node to the <see cref="T:System.Xml.XmlWriter"/> that is passed in.
+            </summary>
+            <param name="w">The <see cref="T:System.Xml.XmlWriter"/> that this <see cref="T:System.Xml.XLinq.XCData"/> will be written to.</param>
+        </member>
+        <member name="P:System.Xml.XLinq.XCData.NodeType">
+            <summary>
+            Returns the <see cref="T:System.Xml.XmlNodeType"/> for this <see cref="T:System.Xml.XLinq.XCData"/> node.  In this case it is always XmlNodeType.CDATA.
+            </summary>
+            <value>The <see cref="T:System.Xml.XmlNodeType"/> for this <see cref="T:System.Xml.XLinq.XCData"/> node.</value>
+        </member>
+        <member name="P:System.Xml.XLinq.XCData.Value">
+            <summary>
+            Returns the value of the <see cref="T:System.Xml.XLinq.XCData"/> node as a string.
+            </summary>
+            <value>Returns the value of the <see cref="T:System.Xml.XLinq.XCData"/> as a string.</value>
+            <exception cref="T:System.ArgumentException">Thrown on set if the string value passed in is null.</exception>
+        </member>
+        <member name="T:System.Xml.XLinq.XText">
+            <summary>
+            <see cref="T:System.Xml.XLinq.XText"/> is an <see cref="T:System.Xml.XLinq.XCharacterNode"/> that is never exposed to the user.  It is always converted
+            to and from string appropriately via other methods and/or properties.
+            </summary>
+        </member>
+        <member name="T:System.Xml.XLinq.XContainer">
+            <summary>
+            An <see cref="T:System.Xml.XLinq.XNode"/> that can contain other <see cref="T:System.Xml.XLinq.XNode"/>s.  The two types of
+            <see cref="T:System.Xml.XLinq.XContainer"/>s are <see cref="T:System.Xml.XLinq.XDocument"/>s and <see cref="T:System.Xml.XLinq.XElement"/>s.
+            <seealso cref="T:System.Xml.XLinq.XDocument"/><seealso cref="T:System.Xml.XLinq.XElement"/>
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Add(System.Object)">
+            <overloads>
+             Takes the content passed in and adds it as a child (or children) of this <see cref="T:System.Xml.XLinq.XContainer"/>. The
+             content can be a single <see cref="T:System.Object"/>, an array of <see cref="T:System.Object"/>, an <see cref="T:System.Collections.IEnumerable"/> of
+             content objects, a parameter list of content objects, or null.
+             <remarks>
+             <list>
+             <item><see cref="T:System.Xml.XLinq.XAttribute"/> content cannot be added to an <see cref="T:System.Xml.XLinq.XDocument"/></item>
+             <item>string content cannot be added to an <see cref="T:System.Xml.XLinq.XDocument"/></item>
+             <item>An added <see cref="T:System.Xml.XLinq.XAttribute"/> must have a unique <see cref="T:System.Xml.XLinq.XName"/> within the <see cref="T:System.Xml.XLinq.XElement"/> in
+             which it is being added.</item>
+             </list>
+             </remarks>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)"/>
+             </overloads>
+             <summary>
+             Takes a content object and adds it as a child of this <see cref="T:System.Xml.XLinq.XContainer"/>. <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)"/><seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)"/>
+             </summary>
+             <param name="content">
+             A content object containing the string, child node, <see cref="T:System.Collections.IEnumerable"/>, 
+             or an array of content objects to be added as children of this <see cref="T:System.Xml.XLinq.XContainer"/>
+             </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Add(System.Object[])">
+            <summary>
+            Takes a parameter list of content objects and adds them as children of this <see cref="T:System.Xml.XLinq.XContainer"/>. 
+            <note>
+            <see cref="T:System.Xml.XLinq.XAttribute"/>s and string cannot be a part of an <see cref="T:System.Xml.XLinq.XDocument"/>s content.
+            </note>
+            <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+            </summary>
+            <param name="content">
+            A parameter list of content objects.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.AddFirst(System.Object)">
+            <overloads>
+             Takes the content passed in and adds it as the first child (or first children) of this <see cref="T:System.Xml.XLinq.XContainer"/>. The
+             content can be a single <see cref="T:System.Object"/>, an array of <see cref="T:System.Object"/>, an <see cref="T:System.Collections.IEnumerable"/> of
+             content objects, a parameter list of content objects, or null.
+             <note>
+             <see cref="T:System.Xml.XLinq.XAttribute"/>s and string cannot be a part of an <see cref="T:System.Xml.XLinq.XDocument"/>s content.
+             </note>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)"/>
+             </overloads>
+             <summary>
+             Takes a content object and adds it as a child of this <see cref="T:System.Xml.XLinq.XContainer"/>. 
+             <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddAfterThis(System.Object)"/>
+             <seealso cref="M:System.Xml.XLinq.XNode.AddBeforeThis(System.Object)"/>
+             </summary>
+             <param name="content">
+             A content object containing the string, child node, <see cref="T:System.Collections.IEnumerable"/>, 
+             or an array of content objects to be added as children of this <see cref="T:System.Xml.XLinq.XContainer"/>
+             </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.AddFirst(System.Object[])">
+            <summary>
+            Takes a parameter list of content objects and adds them as the first children of this <see cref="T:System.Xml.XLinq.XContainer"/>. 
+            <seealso cref="M:System.Xml.XLinq.XContainer.Content"/>
+            </summary>
+            <param name="content">
+            A parameter list of content objects.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Content">
+            <overloads>
+             Returns the content of this <see cref="T:System.Xml.XLinq.XContainer"/>.  Note that the content does not
+             include <see cref="T:System.Xml.XLinq.XAttribute"/>s.
+             <seealso cref="M:System.Xml.XLinq.XElement.Attributes"/>
+             </overloads>
+             <summary>
+             Returns the content of this <see cref="T:System.Xml.XLinq.XContainer"/> as an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Object"/>.  Note
+             that the content does not include <see cref="T:System.Xml.XLinq.XAttribute"/>s.
+             <seealso cref="M:System.Xml.XLinq.XElement.Attributes"/>
+             </summary>
+             <returns>The contents of this <see cref="T:System.Xml.XLinq.XContainer"/></returns>        
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Content``1">
+            <summary>
+            Returns the contents of this <see cref="T:System.Xml.XLinq.XContainer"/> with the same type as the type parameter.  For example
+            the following code would return all of the comments for an XElement:
+            <example>
+            <![CDATA[
+            IEnumerable<XComment> childComments = myElement.Content<XComment>.
+            ]]>
+            </example>
+            Note that the content does not include <see cref="T:System.Xml.XLinq.XAttribute"/>s.
+            <seealso cref="M:System.Xml.XLinq.XContainer.Elements"/>
+            </summary>
+            <typeparam name="T">A type of any potential content of an see <see cref="T:System.Xml.XLinq.XContainer"/></typeparam>
+            <returns>An IEnumerable of the type that was requested via the Type parameter.</returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Descendants">
+            <summary>
+            Returns the descendant <see cref="T:System.Xml.XLinq.XElement"/>s of this <see cref="T:System.Xml.XLinq.XContainer"/>.  Note this method will
+            not return itself in the resulting IEnumerable.  See <see cref="M:System.Xml.XLinq.XElement.SelfAndDescendants"/> if you
+            need to include the current <see cref="T:System.Xml.XLinq.XElement"/> in the results.  
+            <seealso cref="M:System.Xml.XLinq.XElement.SelfAndDescendants"/>
+            </summary>
+            <returns>
+            An IEnumerable of <see cref="T:System.Xml.XLinq.XElement"/> with all of the descendants below this <see cref="T:System.Xml.XLinq.XContainer"/> in the XML tree.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Descendants``1">
+            <summary>
+            Returns all of the Descendants of this <see cref="T:System.Xml.XLinq.XContainer"/> as an IEnumerable of a 
+            specified type.  For example to get all of the comments below a particular XElement:
+            <example>
+            <![CDATA[
+            IEnumerable<XComment> myDescendantComments = myXElement.Descendants<XComment>();
+            ]]>
+            </example>
+            Note that <see cref="T:System.Xml.XLinq.XAttribute"/>s are not are not valid type parameters and will not return any results.
+            </summary>
+            <typeparam name="T">
+            Specifies the type of Descendant that you are requesting.
+            </typeparam>
+            <returns>
+            An IEnumerable of the type specified in the Type parameter.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Descendants(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the Descendant <see cref="T:System.Xml.XLinq.XElement"/>s with the passed in <see cref="T:System.Xml.XLinq.XName"/> as an IEnumerable
+            of XElement.
+            </summary>
+            <param name="name">The <see cref="T:System.Xml.XLinq.XName"/> to match against descendant <see cref="T:System.Xml.XLinq.XElement"/>s.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/></returns>        
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Element(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the child element with this <see cref="T:System.Xml.XLinq.XName"/> or null if there is no child element
+            with a matching <see cref="T:System.Xml.XLinq.XName"/>.
+            <seealso cref="M:System.Xml.XLinq.XContainer.Elements"/>
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> to match against this <see cref="T:System.Xml.XLinq.XContainer"/>s child elements.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XElement"/> child that matches the <see cref="T:System.Xml.XLinq.XName"/> passed in, or null.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Elements">
+            <overloads>
+             Returns the child <see cref="T:System.Xml.XLinq.XElement"/>s of this <see cref="T:System.Xml.XLinq.XContainer"/>.
+             </overloads>
+             <summary>
+             Returns all of the child elements of this <see cref="T:System.Xml.XLinq.XContainer"/>.
+             </summary>
+             <returns>
+             An <see cref="T:System.Collections.IEnumerable"/> over all of this <see cref="T:System.Xml.XLinq.XContainer"/>'s child <see cref="T:System.Xml.XLinq.XElement"/>s.
+             </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.Elements(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the child elements of this <see cref="T:System.Xml.XLinq.XContainer"/> that match the <see cref="T:System.Xml.XLinq.XName"/> passed in.
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> to match against the <see cref="T:System.Xml.XLinq.XElement"/> children of this <see cref="T:System.Xml.XLinq.XContainer"/>.
+            </param>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> children of this <see cref="T:System.Xml.XLinq.XContainer"/> that have
+            a matching <see cref="T:System.Xml.XLinq.XName"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.ReadContentFrom(System.Xml.XmlReader)">
+            <summary>
+            Reads the contents from the <see cref="T:System.Xml.XmlReader"/> passed in and adds it as children of this <see cref="T:System.Xml.XLinq.XContainer"/>.
+            <note>
+            Any existing content is removed before adding the content from the <see cref="T:System.Xml.XmlReader"/>.
+            </note>
+            <note>
+            <see cref="T:System.Xml.XLinq.XAttribute"/>s and string cannot be a part of an <see cref="T:System.Xml.XLinq.XDocument"/>s content.
+            </note>
+            </summary>
+            <param name="r">
+            An <see cref="T:System.Xml.XmlReader"/> positioned at the node to be read in and added as a child of this <see cref="T:System.Xml.XLinq.XContainer"/>
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.RemoveContent">
+            <summary>
+            Removes the content (all child Nodes) from this <see cref="T:System.Xml.XLinq.XContainer"/>.  Note this
+            methods does not remove attributes.  See <see cref="M:System.Xml.XLinq.XElement.RemoveAttributes"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.RemoveAttributes"/>
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.ReplaceContent(System.Object)">
+            <overloads>
+            Replaces the current content of this <see cref="T:System.Xml.XLinq.XContainer"/> with the content passed in.  The content
+            passed in can be a single content object, an array of content objects, an IEnumerable of content
+            objects, a parameter list of content objects, or null.
+            <note>
+            <see cref="T:System.Xml.XLinq.XAttribute"/>s and string cannot be a part of an <see cref="T:System.Xml.XLinq.XDocument"/>s content.
+            </note>
+            <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+            </overloads>
+            <summary>
+            Replaces the current content of this <see cref="T:System.Xml.XLinq.XContainer"/> with the content passed in.  
+            <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+            </summary>
+            <param name="content">
+            Can be a single content object, and array of content objects, an IEnumerable of content objects,
+            or null.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.ReplaceContent(System.Object[])">
+            <summary>
+            Replaces the current content of this <see cref="T:System.Xml.XLinq.XContainer"/> with the content that is passed in.
+            </summary>
+            <param name="content">
+            A parameter list of content objects.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XContainer.WriteContentTo(System.Xml.XmlWriter)">
+            <summary>
+            Writes the content of this <see cref="T:System.Xml.XLinq.XContainer"/> to the passed in <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to write the content of this <see cref="T:System.Xml.XLinq.XContainer"/> to.
+            </param>
+        </member>
+        <member name="T:System.Xml.XLinq.XElement">
+            <summary>
+            Represents an XML Element.  An XML Element has an <see cref="T:System.Xml.XLinq.XName"/>, optionally a set
+            of <see cref="T:System.Xml.XLinq.XAttribute"/>s, and can optionally contain content (see <see cref="M:System.Xml.XLinq.XContainer.Content"/>.
+            An <see cref="T:System.Xml.XLinq.XElement"/> can contain the following types of content:
+            <list>
+              <item>string (Text content)</item>
+              <item><see cref="T:System.Xml.XLinq.XElement"/></item>
+              <item><see cref="T:System.Xml.XLinq.XCData"/></item>
+              <item><see cref="T:System.Xml.XLinq.XProcessingInstruction"/></item>
+              </list>
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.#ctor(System.Xml.XLinq.XName)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XElement"/> with it's <see cref="T:System.Xml.XLinq.XName"/> initialized to the
+            <see cref="T:System.Xml.XLinq.XName"/> passed in.
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> to associate with this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.#ctor(System.Xml.XLinq.XName,System.Object[])">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XElement"/> with it's <see cref="T:System.Xml.XLinq.XName"/> initialize to the 
+            <see cref="T:System.Xml.XLinq.XName"/> passed in, and the parameter list of content passed in as a child 
+            (or children) of this <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> to associate with this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <param name="contents"></param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.#ctor(System.Xml.XLinq.XElement)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XElement"/> from another <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <param name="other">
+            Another <see cref="T:System.Xml.XLinq.XElement"/> that will be copied to initialized this <see cref="T:System.Xml.XLinq.XElement"/>
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XElement"/> from an XmlReader positioned on a <see cref="F:System.Xml.XmlNodeType.Element"/>.
+            </summary>
+            <param name="r">
+            The <see cref="T:System.Xml.XmlReader"/> that will be read from to create this <see cref="T:System.Xml.XLinq.XElement"/>.  The 
+            <see cref="T:System.Xml.XmlReader"/> must be positioned on a <see cref="F:System.Xml.XmlNodeType.Element"/>.
+            </param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XmlReader"/> is not positioned on a <see cref="F:System.Xml.XmlNodeType.Element"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Ancestors">
+            <overloads>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of the ancestor <see cref="T:System.Xml.XLinq.XElement"/>s for this <see cref="T:System.Xml.XLinq.XElement"/>.
+            Optionally an <see cref="T:System.Xml.XLinq.XName"/> can be passed to target a specific ancestor.
+            </overloads>
+            <summary>
+            Returns the ancestors of this <see cref="T:System.Xml.XLinq.XElement"/> up to the root element.
+            <note>
+            This method will not return itself in the results.  See <see cref="M:System.Xml.XLinq.XElement.SelfAndAncestors"/>.
+            </note>
+            <seealso cref="M:System.Xml.XLinq.XElement.SelfAndAncestors"/>
+            </summary>
+            <returns>
+            The ancestors of this <see cref="T:System.Xml.XLinq.XElement"/> as an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Ancestors(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the ancestor(s) of this <see cref="T:System.Xml.XLinq.XElement"/> with this <see cref="T:System.Xml.XLinq.XName"/>.
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the ancestor <see cref="T:System.Xml.XLinq.XElement"/> that is being queried for.
+            </param>
+            <returns>
+            The ancestor(s) of this <see cref="T:System.Xml.XLinq.XElement"/> with this <see cref="T:System.Xml.XLinq.XName"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Attribute(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the <see cref="T:System.Xml.XLinq.XAttribute"/> associated with this <see cref="T:System.Xml.XLinq.XElement"/> that has this 
+            <see cref="T:System.Xml.XLinq.XName"/>.
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the <see cref="T:System.Xml.XLinq.XAttribute"/> to get.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> with the <see cref="T:System.Xml.XLinq.XName"/> passed in.  If there is no <see cref="T:System.Xml.XLinq.XAttribute"/>
+            with this <see cref="T:System.Xml.XLinq.XName"/> then null is returned.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Attributes">
+            <overloads>
+            Returns the <see cref="T:System.Xml.XLinq.XAttribute"/> associated with this <see cref="T:System.Xml.XLinq.XElement"/>.  Optionally
+            an <see cref="T:System.Xml.XLinq.XName"/> can be given to target a specific <see cref="T:System.Xml.XLinq.XAttribute"/>(s).
+            </overloads>
+            <summary>
+            Returns all of the <see cref="T:System.Xml.XLinq.XAttribute"/>s associated with this <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XContainer.Elements"/>
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XAttribute"/> containing all of the <see cref="T:System.Xml.XLinq.XAttribute"/>s
+            associated with this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Attributes(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the <see cref="T:System.Xml.XLinq.XAttribute"/>(s) associated with this <see cref="T:System.Xml.XLinq.XElement"/> that has the passed
+            in <see cref="T:System.Xml.XLinq.XName"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.Attributes"/>
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the targeted <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.XLinq.XAttribute"/>(s) with the matching 
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Equals(System.Object)">
+            <summary>
+            Returns true if the passed in <see cref="T:System.Xml.XLinq.XElement"/> equals this <see cref="T:System.Xml.XLinq.XElement"/>.  Equals is
+            true if the two <see cref="T:System.Xml.XLinq.XElement"/>'s <see cref="T:System.Xml.XLinq.XName"/>s are equal, their list of associated
+            <see cref="T:System.Xml.XLinq.XAttribute"/>s are equal, and their content is equal.  A deep equality check is done
+            on the content.
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to compare this <see cref="T:System.Xml.XLinq.XElement"/> with for equality.
+            </param>
+            <returns>
+            true if the two <see cref="T:System.Xml.XLinq.XElement"/>s are equal.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.GetHashCode">
+            <summary>
+            Returns a hash code as an integer for this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            A hash code as an integer for this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Load(System.String)">
+            <overloads>
+            The Load method provides multiple strategies for creating a new 
+            <see cref="T:System.Xml.XLinq.XElement"/> and initializing it from a data source containing
+            raw XML.  Load from a file (passing in a URI to the file), an
+            <see cref="T:System.Xml.XmlTextReader"/>, a <see cref="T:System.IO.TextReader"/>, or an
+            <see cref="T:System.Xml.XmlReader"/>.  Note:  Use <see cref="M:System.Xml.XLinq.XDocument.Parse(System.String)"/>
+            to create an <see cref="T:System.Xml.XLinq.XDocument"/> from a string containing XML.
+            <seealso cref="M:System.Xml.XLinq.XDocument.Load(System.String)"/>
+            <seealso cref="M:System.Xml.XLinq.XElement.Parse(System.String)"/>
+            </overloads>
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XElement"/> based on the contents of the file 
+            referenced by the URI parameter passed in.  Note: Use 
+            <see cref="M:System.Xml.XLinq.XElement.Parse(System.String)"/> to create an <see cref="T:System.Xml.XLinq.XElement"/> from
+            a string containing XML.
+            <seealso cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/>
+            <seealso cref="M:System.Xml.XLinq.XElement.Parse(System.String)"/>
+            <seealso cref="M:System.Xml.XLinq.XDocument.Parse(System.String)"/>
+            </summary>
+            <remarks>
+            This method uses the <see cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/> constructor to create
+            an <see cref="T:System.Xml.XmlTextReader"/> to read the raw XML into the underlying
+            XML tree.
+            </remarks>
+            <param name="uri">
+            A URI string referencing the file to load into a new <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XElement"/> initialized with the contents of the file referenced
+            in the passed in uri parameter.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Load(System.String,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XElement"/> based on the contents of the file 
+            referenced by the URI parameter passed in.  Optionally, whitespace can be preserved.  
+            <see cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/>
+            <seealso cref="M:System.Xml.XLinq.XDocument.Load(System.String,System.Boolean)"/> 
+            </summary>
+            <remarks>
+            This method uses the <see cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/> constructor to create
+            an <see cref="T:System.Xml.XmlTextReader"/> to read the raw XML into an underlying
+            XML tree.  If the preserveWhitespace boolean parameter is set to true then
+            the <see cref="T:System.Xml.XmlTextReader"/> property <see cref="P:System.Xml.XmlTextReader.WhitespaceHandling"/>
+            is set to <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.
+            </remarks>
+            <param name="uri">
+            A string representing the URI of the file to be loaded into a new <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <param name="preserveWhitespace">
+            If set to true then white space will be preserved.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XElement"/> initialized with the contents of the file referenced
+            in the passed uri parameter.  If the preserveWhitespace paramater was true then
+            significant whitespace will be preserved.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Load(System.IO.TextReader)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XElement"/> and initialize its underlying XML tree using
+            the passed <see cref="T:System.IO.TextReader"/> parameter.  
+            </summary>
+            <param name="tr">
+            A <see cref="T:System.IO.TextReader"/> containing the raw XML to read into the newly
+            created <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <returns>
+            A new <see cref="T:System.Xml.XLinq.XElement"/> containing the contents of the passed in
+            <see cref="T:System.IO.TextReader"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Load(System.IO.TextReader,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XElement"/> and initialize its underlying XML tree using
+            the passed <see cref="T:System.IO.TextReader"/> parameter.  Optionally whitespace handling
+            can be preserved.
+            </summary>
+            <remarks>
+            If the preserveWhitespace boolean parameter is set to true then
+            the <see cref="T:System.IO.TextReader"/> property <see cref="P:System.Xml.XmlTextReader.WhitespaceHandling"/>
+            is set to <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.
+            </remarks>
+            <param name="tr">
+            A <see cref="T:System.IO.TextReader"/> containing the raw XML to read into the newly
+            created <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <param name="preserveWhitespace">
+            If true then whitespace will be preserved.
+            </param>
+            <returns>
+            A new <see cref="T:System.Xml.XLinq.XElement"/> containing the contents of the passed in
+            <see cref="T:System.IO.TextReader"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Load(System.Xml.XmlReader)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XElement"/> containing the contents of the
+            passed in <see cref="T:System.Xml.XmlReader"/>.
+            </summary>
+            <param name="r">
+            An <see cref="T:System.Xml.XmlReader"/> containing the XML to be read into the new
+            <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <returns>
+            A new <see cref="T:System.Xml.XLinq.XElement"/> containing the contents of the passed
+            in <see cref="T:System.Xml.XmlReader"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Parse(System.String)">
+            <overloads>
+            Parses a string containing XML into an <see cref="T:System.Xml.XLinq.XElement"/>.  Optionally
+            whitespace can be preserved.
+            </overloads>
+            <summary>
+            Parses a string containing XML into an <see cref="T:System.Xml.XLinq.XElement"/>.  
+            </summary>
+            <remarks>
+            The XML must contain only one root node.
+            </remarks>
+            <param name="s">
+            A string containing the XML to parse into an <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XElement"/> created from the XML string passed in.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Parse(System.String,System.Boolean)">
+            <summary>
+            Parses a string containing XML into an <see cref="T:System.Xml.XLinq.XElement"/> and 
+            optionally preserves the Whitepspace.  See <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.
+            <seealso cref="F:System.Xml.WhitespaceHandling.Significant"/>
+            </summary>
+            <remarks>
+            <list>
+            <item>The XML must contain only one root node.</item>
+            <item>
+            Passing in true for preserveWhitespace sets the underlying <see cref="T:System.Xml.XmlTextReader"/>'s
+            whitespace handling to significant (see <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.
+            </item>
+            </list>
+            </remarks>
+            <param name="s">
+            A string containing the XML to parse into an <see cref="T:System.Xml.XLinq.XElement"/>.
+            </param>
+            <param name="preserveWhitespace">
+            true if Whitespace should be preserved when parsing the XML string passed in.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XElement"/> created from the XML string passed in.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.RemoveAll">
+            <summary>
+            Removes content and attributes from this <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.RemoveAttributes"/>
+            <seealso cref="M:System.Xml.XLinq.XContainer.RemoveContent"/>
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.RemoveAttributes">
+            <summary>
+            Removes that attributes of this <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.RemoveAll"/>
+            <seealso cref="M:System.Xml.XLinq.XElement.RemoveAttributes"/>
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Save(System.String)">
+            <overloads>
+             Outputs this <see cref="T:System.Xml.XLinq.XElement"/>'s underlying XML tree.  The output can
+             be saved to a file, an <see cref="T:System.Xml.XmlTextWriter"/>, a <see cref="T:System.IO.TextWriter"/>,
+             or an <see cref="T:System.Xml.XmlWriter"/>.  Optionally whitespace can be preserved.  
+             </overloads>
+             <summary>
+             Output this <see cref="T:System.Xml.XLinq.XElement"/> to a file.
+             </summary>
+             <remarks>
+             The format will be indented by default.  If you want
+             no indenting then use the preserveWhitespace version of Save (see
+             <see cref="M:System.Xml.XLinq.XElement.Save(System.String,System.Boolean)"/>) setting preserveWhitespace
+             to true.
+             </remarks>
+             <param name="filename">
+             The name of the file to output the XML to.
+             </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Save(System.String,System.Boolean)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XElement"/> to a file.
+            </summary>
+            <param name="filename">
+            The name of the file to output the XML to.  
+            </param>
+            <param name="preserveWhitespace">
+            If true whitespace will be preserved in the output.  If false
+            the output will be indented.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Save(System.IO.TextWriter)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XElement"/> to the passed in <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+            <remarks>
+            The format will be indented by default.  If you want
+            no indenting then use the preserveWhitespace version of Save (see
+            <see cref="M:System.Xml.XLinq.XElement.Save(System.IO.TextWriter,System.Boolean)"/>) setting preserveWhitespace
+            to true.
+            </remarks>
+            <param name="tw">
+            The <see cref="T:System.IO.TextWriter"/> to output this <see cref="T:System.Xml.XLinq.XElement"/> to.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Save(System.IO.TextWriter,System.Boolean)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+            <param name="tw">
+            The <see cref="T:System.IO.TextWriter"/> to output the XML to.  
+            </param>
+            <param name="preserveWhitespace">
+            If true whitespace will be preserved in the output.  If false
+            the output will be indented.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.Save(System.Xml.XmlWriter)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to output the XML to.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SelfAndAncestors">
+            <overloads>
+            Returns this <see cref="T:System.Xml.XLinq.XElement"/> and all of it's ancestors up
+            to the root node.  Optionally an <see cref="T:System.Xml.XLinq.XName"/> can be passed
+            in to target a specific ancestor(s).
+            <seealso cref="M:System.Xml.XLinq.XElement.Ancestors"/>
+            </overloads>
+            <summary>
+            Returns this <see cref="T:System.Xml.XLinq.XElement"/> and all of it's ancestors up to 
+            the root node.
+            <seealso cref="M:System.Xml.XLinq.XElement.Ancestors"/>
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing all of
+            this <see cref="T:System.Xml.XLinq.XElement"/>'s ancestors up to the root node (including
+            this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SelfAndAncestors(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the ancestor(s) of this <see cref="T:System.Xml.XLinq.XElement"/> with the matching
+            <see cref="T:System.Xml.XLinq.XName"/>. If this <see cref="T:System.Xml.XLinq.XElement"/>'s <see cref="T:System.Xml.XLinq.XName"/>
+            matches the <see cref="T:System.Xml.XLinq.XName"/> passed in then it will be invluded in the 
+            resulting <see cref="T:System.Collections.IEnumerable"/> or <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.Ancestors"/>
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the target ancestor.
+            </param>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the
+            ancestors of this <see cref="T:System.Xml.XLinq.XElement"/> with a matching <see cref="T:System.Xml.XLinq.XName"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SelfAndDescendants">
+            <overloads>
+            Returns this <see cref="T:System.Xml.XLinq.XElement"/> and all of it's descendants.  Overloads allow
+            specification of a type of descendant to return, or a specific <see cref="T:System.Xml.XLinq.XName"/>
+            of a descendant <see cref="T:System.Xml.XLinq.XElement"/> to match.
+            </overloads>
+            <summary>
+            Returns this <see cref="T:System.Xml.XLinq.XElement"/> and all of it's descendant <see cref="T:System.Xml.XLinq.XElement"/>s
+            as an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.SelfAndDescendants"/>
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing this <see cref="T:System.Xml.XLinq.XElement"/>
+            and all of it's descendants.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SelfAndDescendants``1">
+            <summary>
+            Returns all of the descendants of this <see cref="T:System.Xml.XLinq.XElement"/> with the specified
+            type.  If the specified type is <see cref="T:System.Xml.XLinq.XElement"/> then this <see cref="T:System.Xml.XLinq.XElement"/>
+            will be returned in the results.
+            </summary>
+            <typeparam name="T">
+            The target type of the descendants to return.
+            </typeparam>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of the type specified in the passed in type parameter.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SelfAndDescendants(System.Xml.XLinq.XName)">
+            <summary>
+            Returns the descendants of this <see cref="T:System.Xml.XLinq.XElement"/> that have a matching <see cref="T:System.Xml.XLinq.XName"/>
+            to the one passed in, including, potentially, this <see cref="T:System.Xml.XLinq.XElement"/>.
+            <seealso cref="M:System.Xml.XLinq.XElement.SelfAndDescendants(System.Xml.XLinq.XName)"/>
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the descendant <see cref="T:System.Xml.XLinq.XElement"/> that is being targeted.
+            </param>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing all of the descendant
+            <see cref="T:System.Xml.XLinq.XElement"/>s that have this <see cref="T:System.Xml.XLinq.XName"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SetAttribute(System.Xml.XLinq.XName,System.Object)">
+            <summary>
+            Sets the <see cref="T:System.Xml.XLinq.XAttribute"/> with the passed in <see cref="T:System.Xml.XLinq.XName"/> to the value 
+            specified.  If the <see cref="T:System.Xml.XLinq.XAttribute"/> exists it will be updated with the passed
+            in value, otherwise, the <see cref="T:System.Xml.XLinq.XAttribute"/> is added to the XElement.  If the 
+            value if null the <see cref="T:System.Xml.XLinq.XAttribute"/> will be deleted.
+            </summary>
+            <remarks>
+            Compare this to adding an <see cref="T:System.Xml.XLinq.XAttribute"/> with the <see cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/>
+            method.  The <see cref="M:System.Xml.XLinq.XContainer.Add(System.Object)"/> will throw an exception if the <see cref="T:System.Xml.XLinq.XAttribute"/>
+            already exists.
+            </remarks>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the <see cref="T:System.Xml.XLinq.XAttribute"/> to set the value of.
+            </param>
+            <param name="value">
+            The value to set the target <see cref="T:System.Xml.XLinq.XAttribute"/> to.  If the value is null then the
+            <see cref="T:System.Xml.XLinq.XAttribute"/> will be deleted.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.SetElement(System.Xml.XLinq.XName,System.Object)">
+            <summary>
+            Sets the value of a child <see cref="T:System.Xml.XLinq.XElement"/> to the value passed in.  If the
+            <see cref="T:System.Xml.XLinq.XElement"/> exists it will be updated to the value passed in.  If the
+            value passed in is null the <see cref="T:System.Xml.XLinq.XElement"/> will be deleted.  
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the child <see cref="T:System.Xml.XLinq.XElement"/> to be deleted.
+            </param>
+            <param name="value">
+            The value to give the <see cref="T:System.Xml.XLinq.XElement"/> child.  The value can be a simple
+            type (string, double, float, decimal, bool, DateTime, TimeSpan), or another
+            <see cref="T:System.Xml.XLinq.XElement"/> (potentially with it's own subtree).
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Write this <see cref="T:System.Xml.XLinq.XElement"/> to the passed in <see cref="T:System.Xml.XmlTextWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlTextWriter"/> to write this <see cref="T:System.Xml.XLinq.XElement"/> to.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.String">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.String"/>.
+            </summary>
+            <remarks>
+            If the <see cref="T:System.Xml.XLinq.XElement"/> is a subtre (an <see cref="T:System.Xml.XLinq.XElement"/>
+            that has <see cref="T:System.Xml.XLinq.XElement"/> children.  The concatenated string
+            value of all of the <see cref="T:System.Xml.XLinq.XElement"/>'s text and descendants
+            text is returned.
+            </remarks>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to a string.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Boolean">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Boolean"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Boolean"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Boolean"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Boolean"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Boolean}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Boolean"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Boolean"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Boolean"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Boolean"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Int32">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Int32"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Int32"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Int32"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Int32}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Int32"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Int32"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Int32"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Int32"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.UInt32">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.UInt32"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.UInt32"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.UInt32"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.UInt32}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.UInt32"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.UInt32"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.UInt32"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.UInt32"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Int64">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Int64"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Int64"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Int64"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Int64}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Int64"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Int64"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Int64"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Int64"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.UInt64">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.UInt64"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.UInt64"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.UInt64"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.UInt64"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.UInt64}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.UInt64"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.UInt64"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.UInt64"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.UInt64"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Single">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Single"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Single"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Single"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Single"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Single}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Single"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Single"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Single"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Single"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Double">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Double"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Double"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Double"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Double"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Double}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Double"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Double"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Double"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Double"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Decimal">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Decimal"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Decimal"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Decimal"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Decimal"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>        
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Decimal}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Decimal"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Decimal"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Decimal"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Decimal"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.DateTime">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.DateTime"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.DateTime"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.DateTime"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>        
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.DateTime}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.DateTime"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.DateTime"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.DateTime"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.DateTime"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.TimeSpan">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.TimeSpan"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.TimeSpan"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.TimeSpan"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.TimeSpan}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.TimeSpan"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.TimeSpan"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.TimeSpan"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.TimeSpan"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Guid">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to a <see cref="T:System.Guid"/>.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Guid"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Guid"/>.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Guid"/>
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> passed in is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XElement.op_Explicit(System.Xml.XLinq.XElement)~System.Nullable{System.Guid}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XElement"/> to an <see cref="T:System.Guid"/>?.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Xml.XLinq.XElement"/> to cast to <see cref="T:System.Guid"/>?.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XElement"/> as a <see cref="T:System.Guid"/>?.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Thrown if the <see cref="T:System.Xml.XLinq.XElement"/> is not a valid <see cref="T:System.Guid"/>.
+            </exception>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.EmptySequence">
+            <summary>
+            Returns an empty <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>
+            </summary>
+            <value>
+            An empty <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.HasAttributes">
+            <summary>
+            Returns true if this <see cref="T:System.Xml.XLinq.XElement"/> has at least one <see cref="T:System.Xml.XLinq.XAttribute"/> child.
+            </summary>
+            <value>
+            true if this <see cref="T:System.Xml.XLinq.XElement"/> has at least one <see cref="T:System.Xml.XLinq.XAttribute"/> child.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.HasElements">
+            <summary>
+            Returns true if this <see cref="T:System.Xml.XLinq.XElement"/> has at least one <see cref="T:System.Xml.XLinq.XElement"/> child.
+            </summary>
+            <value>
+            true if this <see cref="T:System.Xml.XLinq.XElement"/> has at least one <see cref="T:System.Xml.XLinq.XElement"/> child.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.IsEmpty">
+            <summary>
+            Returns true if this <see cref="T:System.Xml.XLinq.XElement"/> contains no content.
+            </summary>
+            <value>
+            true if this <see cref="T:System.Xml.XLinq.XElement"/> contains no content.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.Name">
+            <summary>
+            Returns the <see cref="T:System.Xml.XLinq.XName"/> associated with this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XLinq.XName"/> associated with this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.NodeType">
+            <summary>
+            Returns the <see cref="T:System.Xml.XmlNodeType"/> of this <see cref="T:System.Xml.XLinq.XElement"/> which is always
+            <see cref="F:System.Xml.XmlNodeType.Element"/>.
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XmlNodeType"/> of this <see cref="T:System.Xml.XLinq.XElement"/> which is always
+            <see cref="F:System.Xml.XmlNodeType.Element"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XElement.Value">
+            <summary>
+            Returns the text contents of this <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <remarks>
+            If there is text content interspersed with nodes (mixed content) the text content
+            will be concatenated and returned.
+            </remarks>
+        </member>
+        <member name="T:System.Xml.XLinq.XDocument">
+            <summary>
+            Represents an XML Document, which is a logical container for
+            the XML Document.  An <see cref="T:System.Xml.XLinq.XDocument"/> can contain:
+            <list>
+              <item>
+                A Document Type Declaration (DTD), see <see cref="T:System.Xml.XLinq.XDocumentType"/>
+              </item>
+              <item>An XML Declaration, see <see cref="T:System.Xml.XLinq.XDeclaration"/></item>
+              <item>One root <see cref="T:System.Xml.XLinq.XElement"/></item>
+              <item><see cref="T:System.Xml.XLinq.XComment"/></item>
+              <item><see cref="T:System.Xml.XLinq.XProcessingInstruction"/></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.#ctor">
+            <overloads>
+             Creates a new <see cref="T:System.Xml.XLinq.XDocument"/>.  Overloaded constructors are provided
+             for creating a new empty <see cref="T:System.Xml.XLinq.XDocument"/>, creating an 
+             <see cref="T:System.Xml.XLinq.XDocument"/> with a parameter list of initial content,
+             and as a copy of another <see cref="T:System.Xml.XLinq.XDocument"/>.
+             </overloads>
+             <summary>
+             Creates an empty <see cref="T:System.Xml.XLinq.XDocument"/>
+             </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.#ctor(System.Object[])">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XDocument"/> initialized to the content
+            objects in the parameter list.  Valid content objects include: 
+            <see cref="T:System.Xml.XLinq.XDocumentType"/>, <see cref="T:System.Xml.XLinq.XDeclaration"/>, a single
+            <see cref="T:System.Xml.XLinq.XElement"/>, an <see cref="T:System.Xml.XLinq.XComment"/>, or an
+            <see cref="T:System.Xml.XLinq.XProcessingInstruction"/>.
+            </summary>
+            <param name="contents">
+            A parameter list of content objects to add to this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            Valid content objects include:
+            <see cref="T:System.Xml.XLinq.XDocumentType"/>, <see cref="T:System.Xml.XLinq.XDeclaration"/>, a single
+            <see cref="T:System.Xml.XLinq.XElement"/>, an <see cref="T:System.Xml.XLinq.XComment"/>, or an
+            <see cref="T:System.Xml.XLinq.XProcessingInstruction"/>.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.#ctor(System.Xml.XLinq.XDocument)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XDocument"/> that is a copy of the passed
+            in <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </summary>
+            <param name="other">
+            The <see cref="T:System.Xml.XLinq.XDocument"/> that will be copied to create a new
+            <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Load(System.String)">
+            <overloads>
+            The Load method provides multiple strategies for creating a new 
+            <see cref="T:System.Xml.XLinq.XDocument"/> and initializing it from a data source containing
+            raw XML.  Load from a file (passing in a URI to the file), an
+            <see cref="T:System.Xml.XmlTextReader"/>, a <see cref="T:System.IO.TextReader"/>, or an
+            <see cref="T:System.Xml.XmlReader"/>.  Note:  Use <see cref="M:System.Xml.XLinq.XDocument.Parse(System.String)"/>
+            to create an <see cref="T:System.Xml.XLinq.XDocument"/> from a string containing XML.
+            <seealso cref="M:System.Xml.XLinq.XDocument.Parse(System.String)"/>
+            </overloads>
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> based on the contents of the file 
+            referenced by the URI parameter passed in.  Note: Use 
+            <see cref="M:System.Xml.XLinq.XDocument.Parse(System.String)"/> to create an <see cref="T:System.Xml.XLinq.XDocument"/> from
+            a string containing XML.
+            <seealso cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/>
+            <seealso cref="M:System.Xml.XLinq.XDocument.Parse(System.String)"/>
+            </summary>
+            <remarks>
+            This method uses the <see cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/> constructor to create
+            an <see cref="T:System.Xml.XmlTextReader"/> to read the raw XML into the underlying
+            XML tree.
+            </remarks>
+            <param name="uri">
+            A URI string referencing the file to load into a new <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XDocument"/> initialized with the contents of the file referenced
+            in the passed in uri parameter.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Load(System.String,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> based on the contents of the file 
+            referenced by the URI parameter passed in.  Optionally, whitespace can be preserved.  
+            <see cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/>
+            </summary>
+            <remarks>
+            This method uses the <see cref="M:System.Xml.XmlTextReader.#ctor(System.String)"/> constructor to create
+            an <see cref="T:System.Xml.XmlTextReader"/> to read the raw XML into an underlying
+            XML tree.  If the preserveWhitespace boolean parameter is set to true then
+            the <see cref="T:System.Xml.XmlTextReader"/> property <see cref="P:System.Xml.XmlTextReader.WhitespaceHandling"/>
+            is set to <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.
+            </remarks>
+            <param name="uri">
+            A string representing the URI of the file to be loaded into a new <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+            <param name="preserveWhitespace">
+            If set to true then white space will be preserved.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XDocument"/> initialized with the contents of the file referenced
+            in the passed uri parameter.  If the preserveWhitespace paramater was true then
+            significant whitespace will be preserved.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Load(System.IO.TextReader)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> and initialize its underlying XML tree using
+            the passed <see cref="T:System.IO.TextReader"/> parameter.  
+            </summary>
+            <param name="tr">
+            A <see cref="T:System.IO.TextReader"/> containing the raw XML to read into the newly
+            created <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+            <returns>
+            A new <see cref="T:System.Xml.XLinq.XDocument"/> containing the contents of the passed in
+            <see cref="T:System.IO.TextReader"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Load(System.IO.TextReader,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> and initialize its underlying XML tree using
+            the passed <see cref="T:System.IO.TextReader"/> parameter.  Optionally whitespace handling
+            can be preserved.
+            </summary>
+            <remarks>
+            If the preserveWhitespace boolean parameter is set to true then
+            the <see cref="T:System.IO.TextReader"/> property <see cref="P:System.Xml.XmlTextReader.WhitespaceHandling"/>
+            is set to <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.
+            </remarks>
+            <param name="tr">
+            A <see cref="T:System.IO.TextReader"/> containing the raw XML to read into the newly
+            created <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+            <param name="preserveWhitespace">
+            If true then whitespace will be preserved.
+            </param>
+            <returns>
+            A new <see cref="T:System.Xml.XLinq.XDocument"/> containing the contents of the passed in
+            <see cref="T:System.IO.TextReader"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Load(System.Xml.XmlReader)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> containing the contents of the
+            passed in <see cref="T:System.Xml.XmlReader"/>.
+            </summary>
+            <param name="r">
+            An <see cref="T:System.Xml.XmlReader"/> containing the XML to be read into the new
+            <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+            <returns>
+            A new <see cref="T:System.Xml.XLinq.XDocument"/> containing the contents of the passed
+            in <see cref="T:System.Xml.XmlReader"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Parse(System.String)">
+            <overloads>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> from a string containing
+            XML.  Optionally whitespace can be preserved.
+            </overloads>
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> from a string containing
+            XML.
+            </summary>
+            <param name="s">
+            A string containing XML.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XDocument"/> containing an XML tree initialized from the 
+            passed in XML string.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Parse(System.String,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:System.Xml.XLinq.XDocument"/> from a string containing
+            XML.  Optionally whitespace can be preserved.
+            </summary>
+            <remarks>
+            This method uses <see cref="T:System.Xml.XmlTextReader"/> passing it a StringReader
+            constructed from the passed in XML String.  If the preserveWhitespace
+            parameter is true then <see cref="P:System.Xml.XmlTextReader.WhitespaceHandling"/> is
+            set to <see cref="F:System.Xml.WhitespaceHandling.Significant"/>.  See <see cref="T:System.Xml.XmlTextReader"/>
+            for more information on whitespace handling.
+            </remarks>
+            <param name="s">
+            A string containing XML.
+            </param>
+            <param name="preserveWhitespace">
+            If true significant whitespace will be preserved.
+            </param>
+            <returns>
+            An <see cref="T:System.Xml.XLinq.XDocument"/> containing an XML tree initialized from the 
+            passed in XML string.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Save(System.String)">
+            <overloads>
+             Outputs this <see cref="T:System.Xml.XLinq.XDocument"/>'s underlying XML tree.  The output can
+             be saved to a file, an <see cref="T:System.Xml.XmlTextWriter"/>, a <see cref="T:System.IO.TextWriter"/>,
+             or an <see cref="T:System.Xml.XmlWriter"/>.  Optionally whitespace can be preserved.  
+             </overloads>
+             <summary>
+             Output this <see cref="T:System.Xml.XLinq.XDocument"/> to a file.
+             </summary>
+             <remarks>
+             The format will be indented by default.  If you want
+             no indenting then use the preserveWhitespace version of Save (see
+             <see cref="M:System.Xml.XLinq.XDocument.Save(System.String,System.Boolean)"/>) setting preserveWhitespace
+             to true.
+             </remarks>
+             <param name="filename">
+             The name of the file to output the XML to.
+             </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Save(System.String,System.Boolean)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XDocument"/> to a file.
+            </summary>
+            <param name="filename">
+            The name of the file to output the XML to.  
+            </param>
+            <param name="preserveWhitespace">
+            If true whitespace will be preserved in the output.  If false
+            the output will be indented.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Save(System.IO.TextWriter)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XDocument"/> to the passed in <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+            <remarks>
+            The format will be indented by default.  If you want
+            no indenting then use the preserveWhitespace version of Save (see
+            <see cref="M:System.Xml.XLinq.XDocument.Save(System.IO.TextWriter,System.Boolean)"/>) setting preserveWhitespace
+            to true.
+            </remarks>
+            <param name="tw">
+            The <see cref="T:System.IO.TextWriter"/> to output this <see cref="T:System.Xml.XLinq.XDocument"/> to.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Save(System.IO.TextWriter,System.Boolean)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XDocument"/> to a <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+            <param name="tw">
+            The <see cref="T:System.IO.TextWriter"/> to output the XML to.  
+            </param>
+            <param name="preserveWhitespace">
+            If true whitespace will be preserved in the output.  If false
+            the output will be indented.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.Save(System.Xml.XmlWriter)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XDocument"/> to an <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to output the XML to.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocument.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Output this <see cref="T:System.Xml.XLinq.XDocument"/>'s underlying XML tree to the
+            passed in <see cref="T:System.Xml.XmlWriter"/>.
+            <seealso cref="M:System.Xml.XLinq.XDocument.Save(System.Xml.XmlWriter)"/>
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to output the content of this 
+            <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </param>
+        </member>
+        <member name="P:System.Xml.XLinq.XDocument.Declaration">
+            <summary>
+            Returns the XML Declaration (<see cref="T:System.Xml.XLinq.XDeclaration"/>) associated
+            with this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </summary>
+            <value>
+            The XML Declaration (<see cref="T:System.Xml.XLinq.XDeclaration"/>) associated
+            with this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XDocument.DocumentType">
+            <summary>
+            Returns the Document Type (<see cref="T:System.Xml.XLinq.XDocumentType"/>) associated with
+            this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </summary>
+            <value>
+            The Document Type (<see cref="T:System.Xml.XLinq.XDocumentType"/>) associated with this
+            <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XDocument.NodeType">
+            <summary>
+            Returns the <see cref="T:System.Xml.XmlNodeType"/> of this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            In this case this will always be <see cref="F:System.Xml.XmlNodeType.Document"/>.
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XmlNodeType"/> of this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            In this case this will always be <see cref="F:System.Xml.XmlNodeType.Document"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XDocument.Root">
+            <summary>
+            Returns the root <see cref="T:System.Xml.XLinq.XElement"/> of the XML Tree associated
+            with this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </summary>
+            <value>
+            The root <see cref="T:System.Xml.XLinq.XElement"/> of the XML Tree associated
+            with this <see cref="T:System.Xml.XLinq.XDocument"/>.
+            </value>
+        </member>
+        <member name="T:System.Xml.XLinq.XComment">
+            <summary>
+            Represents an XML Comment. 
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XComment.#ctor(System.String)">
+            <overloads>
+            Create an <see cref="T:System.Xml.XLinq.XComment"/> from either a string or an
+            <see cref="T:System.Xml.XmlReader"/> positioned on an XML Comment.
+            </overloads>
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XComment"/> based on the string value
+            passed in.
+            </summary>
+            <param name="value">
+            A string value used to initialize the new <see cref="T:System.Xml.XLinq.XComment"/>.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the value parameter is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XComment.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XComment"/> based on an <see cref="T:System.Xml.XmlReader"/>
+            positioned on a comment (<see cref="F:System.Xml.XmlNodeType.Comment"/>).
+            </summary>
+            <param name="r">
+            The <see cref="T:System.Xml.XmlReader"/> to read the XML Comment from.
+            </param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XmlReader"/> is not positioned on an XML Comment
+            (the Node Type does not equal <see cref="F:System.Xml.XmlNodeType.Comment"/>).
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XComment.Equals(System.Object)">
+            <summary>
+            Returns true if this <see cref="T:System.Xml.XLinq.XComment"/> equals the passed
+            in <see cref="T:System.Xml.XLinq.XComment"/>.  Equality is determined by comparing
+            the <see cref="P:System.Xml.XLinq.XComment.Value"/> property of each <see cref="T:System.Xml.XLinq.XComment"/>.
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Xml.XLinq.XComment"/> to compare this <see cref="T:System.Xml.XLinq.XComment"/> to.
+            </param>
+            <returns>
+            true if this <see cref="T:System.Xml.XLinq.XComment"/> is equal to the passed in <see cref="T:System.Xml.XLinq.XComment"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XComment.GetHashCode">
+            <summary>
+            Serves as a hash function for <see cref="T:System.Xml.XLinq.XComment"/>. GetHashCode is suitable 
+            for use in hashing algorithms and data structures like a hash table. 
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XComment.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Write this <see cref="T:System.Xml.XLinq.XComment"/> to the passed in <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to write this <see cref="T:System.Xml.XLinq.XComment"/> to.
+            </param>
+        </member>
+        <member name="P:System.Xml.XLinq.XComment.NodeType">
+            <summary>
+            The node type of this <see cref="T:System.Xml.XLinq.XComment"/>.  In this case it will always be
+            <see cref="F:System.Xml.XmlNodeType.Comment"/>.
+            </summary>
+        </member>
+        <member name="P:System.Xml.XLinq.XComment.Value">
+            <summary>
+            Returns the string value of the <see cref="T:System.Xml.XLinq.XComment"/>.
+            </summary>
+            <value>
+            The string value of the <see cref="T:System.Xml.XLinq.XComment"/>.
+            </value>
+            <exception cref="T:System.ArgumentException">
+            Thrown from set if the passed in value parameter is null.
+            </exception>
+        </member>
+        <member name="T:System.Xml.XLinq.XProcessingInstruction">
+            <summary>
+            Represents an XML Processing Instruction. A processing instruction is intented to convey
+            information to an application that processes the XML.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XProcessingInstruction.#ctor(System.String,System.String)">
+            <summary>
+            Create an XML Processing Instruction using the passed in target and string data.
+            </summary>
+            <param name="target">
+            The target application for this <see cref="T:System.Xml.XLinq.XProcessingInstruction"/>.
+            </param>
+            <param name="data">
+            The string data that comprises the <see cref="T:System.Xml.XLinq.XProcessingInstruction"/>.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the target or data parameter are null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XProcessingInstruction.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XProcessingInstruction"/> based on an <see cref="T:System.Xml.XmlReader"/>
+            positioned on a comment (<see cref="F:System.Xml.XmlNodeType.ProcessingInstruction"/>).
+            </summary>
+            <param name="r">
+            An <see cref="T:System.Xml.XmlReader"/> positioned on an XML Processing Instruction 
+            (<see cref="F:System.Xml.XmlNodeType.ProcessingInstruction"/>).
+            </param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XmlReader"/> is not positioned on an 
+            <see cref="F:System.Xml.XmlNodeType.ProcessingInstruction"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XProcessingInstruction.Equals(System.Object)">
+            <summary>
+            Compares this <see cref="T:System.Xml.XLinq.XProcessingInstruction"/> with another 
+            <see cref="T:System.Xml.XLinq.XProcessingInstruction"/> and returns true if they are
+            equal.  The value of <see cref="P:System.Xml.XLinq.XProcessingInstruction.Target"/> and
+            <see cref="P:System.Xml.XLinq.XProcessingInstruction.Data"/> are used to determine
+            equality.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XProcessingInstruction.GetHashCode">
+            <summary>
+            Serves as a hash function for <see cref="T:System.Xml.XLinq.XProcessingInstruction"/>. GetHashCode is suitable 
+            for use in hashing algorithms and data structures like a hash table.  
+            </summary>
+            <returns>
+            An integer hashcode.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XProcessingInstruction.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Writes this <see cref="T:System.Xml.XLinq.XProcessingInstruction"/> to the passed in <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to write this <see cref="T:System.Xml.XLinq.XProcessingInstruction"/> to.
+            </param>
+        </member>
+        <member name="P:System.Xml.XLinq.XProcessingInstruction.Data">
+            <summary>
+            Returns and sets the string data associated with this <see cref="T:System.Xml.XLinq.XProcessingInstruction"/>.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the passed in value is null on set.
+            </exception>
+        </member>
+        <member name="P:System.Xml.XLinq.XProcessingInstruction.NodeType">
+            <summary>
+            Returns the <see cref="T:System.Xml.XmlNodeType"/> of this XML Processing Instruction.  In this case
+            it will always be <see cref="F:System.Xml.XmlNodeType.ProcessingInstruction"/>
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XmlNodeType"/> of this XML Processing Instruction.  In this case
+            it will always be <see cref="F:System.Xml.XmlNodeType.ProcessingInstruction"/>
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XProcessingInstruction.Target">
+            <summary>
+            Returns or sets a string representing the application that this XML Processing
+            Instruction is targeted for.
+            </summary>
+            <value>
+            A string representing the application that this XML Processing
+            Instruction is targeted for.
+            </value>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the value is set to null.
+            </exception>
+        </member>
+        <member name="T:System.Xml.XLinq.XDeclaration">
+            <summary>
+            Represents an XML Declaration.  An XML Declaration is used to declare the XML version,
+            the encoding, and whether or not the XML Document is standalone.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XDeclaration.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates an <see cref="T:System.Xml.XLinq.XDeclaration"/> initializing the version, encoding,
+            and standalone properties to the values passed in.
+            </summary>
+            <param name="version">
+            A string The version of the XML being represented.  Usually "1.0".
+            </param>
+            <param name="encoding">
+            The encoding for the XML. 
+            </param>
+            <param name="standalone">
+            Specifies whether the XML is standalone or requires external entities
+            to be resolved.
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDeclaration.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Reads an <see cref="T:System.Xml.XLinq.XDeclaration"/> from an <see cref="T:System.Xml.XmlReader"/> positioned
+            on a XML Declaration (<see cref="F:System.Xml.XmlNodeType.XmlDeclaration"/>.
+            </summary>
+            <param name="r">
+            An <see cref="T:System.Xml.XmlReader"/> positioned on an <see cref="F:System.Xml.XmlNodeType.XmlDeclaration"/>.
+            </param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="T:System.Xml.XmlReader"/> is not positioned on an 
+            <see cref="F:System.Xml.XmlNodeType.XmlDeclaration"/>.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XDeclaration.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Write this <see cref="T:System.Xml.XLinq.XDeclaration"/> to the passed in <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> that this <see cref="T:System.Xml.XLinq.XDeclaration"/> will be written
+            to.
+            </param>
+        </member>
+        <member name="P:System.Xml.XLinq.XDeclaration.Encoding">
+            <summary>
+            Returns and sets the encoding for an XML Document.
+            </summary>
+            <value>
+            The encoding for an XML Document.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XDeclaration.NodeType">
+            <summary>
+            Returns the <see cref="T:System.Xml.XmlNodeType"/> for this <see cref="T:System.Xml.XLinq.XDeclaration"/>.
+            In this case <see cref="F:System.Xml.XmlNodeType.XmlDeclaration"/> is always returned.
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XmlNodeType"/> for this <see cref="T:System.Xml.XLinq.XDeclaration"/>.
+            In this case <see cref="F:System.Xml.XmlNodeType.XmlDeclaration"/> is always returned.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XDeclaration.Standalone">
+            <summary>
+            Returns and sets the standalone property of this XML document.
+            </summary>
+            <value>
+            A string representing the standalone property of this XML document.  Normally
+            the valid values for standalone are "yes" or "no".
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XDeclaration.Version">
+            <summary>
+            Returns and sets the version property of this XML document which is 
+            usually "1.0".
+            </summary>
+            <value>
+            A string representing the version property of this XML document (usually "1.0").
+            </value>
+        </member>
+        <member name="T:System.Xml.XLinq.XDocumentType">
+            <summary>
+            Represents an XML Document Type Definition (DTD).
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocumentType.#ctor">
+            <summary>
+            Create an empty <see cref="T:System.Xml.XLinq.XDocumentType"/>.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocumentType.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Create an <see cref="T:System.Xml.XLinq.XDocumentType"/> from an <see cref="T:System.Xml.XmlReader"/> positioned
+            on an <see cref="F:System.Xml.XmlNodeType.DocumentType"/>.
+            </summary>
+            <param name="r">
+            The <see cref="T:System.Xml.XmlReader"/> to read the Document Type Definition 
+            (<see cref="F:System.Xml.XmlNodeType.DocumentType"/>)
+            </param>
+        </member>
+        <member name="M:System.Xml.XLinq.XDocumentType.WriteTo(System.Xml.XmlWriter)">
+            <summary>
+            Write this <see cref="T:System.Xml.XLinq.XDocumentType"/> to the passed in <see cref="T:System.Xml.XmlWriter"/>.
+            </summary>
+            <param name="w">
+            The <see cref="T:System.Xml.XmlWriter"/> to write this <see cref="T:System.Xml.XLinq.XDocumentType"/> to.
+            </param>
+        </member>
+        <member name="P:System.Xml.XLinq.XDocumentType.NodeType">
+            <summary>
+            Returnes the <see cref="T:System.Xml.XmlNodeType"/> for this <see cref="T:System.Xml.XLinq.XDocumentType"/> which,
+            in this case, will always be <see cref="F:System.Xml.XmlNodeType.DocumentType"/>.
+            </summary>
+        </member>
+        <member name="T:System.Xml.XLinq.XAttribute">
+            <summary>
+            Represents an XML Attribute.  An XML Attribute is a name/value
+            pair associated with an XML Element.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.#ctor(System.Xml.XLinq.XName,System.Object)">
+            <overloads>
+            Create an <see cref="T:System.Xml.XLinq.XAttribute"/>.  Create an <see cref="T:System.Xml.XLinq.XAttribute"/> either
+            by providing an <see cref="T:System.Xml.XLinq.XName"/>/value or another <see cref="T:System.Xml.XLinq.XAttribute"/> 
+            to copy.
+            </overloads>
+            <summary>
+            Create an <see cref="T:System.Xml.XLinq.XAttribute"/> using the passed in <see cref="T:System.Xml.XLinq.XName"/>
+            and value.
+            </summary>
+            <param name="name">
+            The <see cref="T:System.Xml.XLinq.XName"/> of the XML Attribute being created.
+            </param>
+            <param name="value">
+            An object representing the value to associate with this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the passed in name or value are null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.#ctor(System.Xml.XLinq.XAttribute)">
+            <summary>
+            Create an <see cref="T:System.Xml.XLinq.XAttribute"/> copy from another <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </summary>
+            <param name="other">
+            Another <see cref="T:System.Xml.XLinq.XAttribute"/> that will be copied.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the passed in other <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.Equals(System.Object)">
+            <summary>
+            Compares two <see cref="T:System.Xml.XLinq.XAttribute"/>s for equality.  Two 
+            <see cref="T:System.Xml.XLinq.XAttribute"/>s are equal if their <see cref="T:System.Xml.XLinq.XName"/>s
+            are equal and their values are equal.
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to compare to this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </param>
+            <returns>
+            true if these two <see cref="T:System.Xml.XLinq.XAttribute"/>s are equal.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.GetHashCode">
+            <summary>
+            Serves as a hash function for <see cref="T:System.Xml.XLinq.XAttribute"/>. GetHashCode is suitable 
+            for use in hashing algorithms and data structures like a hash table.  
+            </summary>
+            <returns>
+            An integer hashcode.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.Remove">
+            <summary>
+            Deletes this XAttribute.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the parent <see cref="T:System.Xml.XLinq.XElement"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.String">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.String"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.String"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Boolean">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Boolean"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Boolean"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Boolean"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Boolean}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Boolean"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Boolean"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Boolean"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Int32">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to an <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Int32"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as an <see cref="T:System.Int32"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Int32}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to an <see cref="T:System.Int32"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Int32"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as an <see cref="T:System.Int32"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.UInt32">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to an <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.UInt32"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as an <see cref="T:System.UInt32"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.UInt32}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to an <see cref="T:System.UInt32"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.UInt32"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as an <see cref="T:System.UInt32"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Int64">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Int64"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Int64"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Int64}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Int64"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Int64"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Int64"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.UInt64">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to an <see cref="T:System.UInt64"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.UInt64"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as an <see cref="T:System.UInt64"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.UInt64}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to an <see cref="T:System.UInt64"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.UInt64"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as an <see cref="T:System.UInt64"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Single">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Single"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Single"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Single"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Single}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Single"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Single"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Single"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Double">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Double"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Double"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Double"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Double}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Double"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Double"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Double"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Decimal">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Decimal"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Decimal"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Decimal"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Decimal}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Decimal"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Decimal"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Decimal"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.DateTime">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.DateTime"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.DateTime"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.DateTime}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.DateTime"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.DateTime"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.DateTime"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.TimeSpan">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.TimeSpan"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.TimeSpan"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.TimeSpan}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.TimeSpan"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.TimeSpan"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.TimeSpan"/>?.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Guid">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Guid"/>.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Guid"/>.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Guid"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the passed in <see cref="T:System.Xml.XLinq.XAttribute"/> is null.
+            </exception>
+        </member>
+        <member name="M:System.Xml.XLinq.XAttribute.op_Explicit(System.Xml.XLinq.XAttribute)~System.Nullable{System.Guid}">
+            <summary>
+            Cast the value of this <see cref="T:System.Xml.XLinq.XAttribute"/> to a <see cref="T:System.Guid"/>?.
+            </summary>
+            <param name="a">
+            The <see cref="T:System.Xml.XLinq.XAttribute"/> to cast to <see cref="T:System.Guid"/>?. Can be null.
+            </param>
+            <returns>
+            The content of this <see cref="T:System.Xml.XLinq.XAttribute"/> as a <see cref="T:System.Guid"/>?.
+            </returns>
+        </member>
+        <member name="P:System.Xml.XLinq.XAttribute.EmptySequence">
+            <summary>
+            Returns an empty sequence, which is an <see cref="T:System.Collections.IEnumerable"/> of
+            <see cref="T:System.Xml.XLinq.XAttribute"/> that contains no entries.
+            </summary>
+            <value>
+            an empty sequence, which is an <see cref="T:System.Collections.IEnumerable"/> of
+            <see cref="T:System.Xml.XLinq.XAttribute"/> that contains no entries.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XAttribute.Name">
+            <summary>
+            Returns the <see cref="T:System.Xml.XLinq.XName"/> associated with this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.XLinq.XName"/> associated with this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XAttribute.Parent">
+            <summary>
+            Returns the parent <see cref="T:System.Xml.XLinq.XElement"/> of this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </summary>
+            <value>
+            The parent <see cref="T:System.Xml.XLinq.XElement"/> of this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </value>
+        </member>
+        <member name="P:System.Xml.XLinq.XAttribute.Value">
+            <summary>
+            Returns and sets the value of this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </summary>
+            <value>
+            The value of this <see cref="T:System.Xml.XLinq.XAttribute"/>.
+            </value>
+            <exception cref="T:System.ArgumentException">
+            Thrown if an attempt is made to set this value to null.
+            </exception>
+        </member>
+        <member name="T:System.Xml.XLinq.XElementSequence">
+            <summary>
+            This class defines the extension methods for language integrated query.  Typically these
+            methods operate on an <see cref="T:System.Collections.IEnumerable"/> and return an <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Attributes(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns all of the <see cref="T:System.Xml.XLinq.XAttribute"/>s for each <see cref="T:System.Xml.XLinq.XElement"/> of
+            this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XAttribute"/> containing the XML
+            Attributes for every <see cref="T:System.Xml.XLinq.XElement"/> in the target <see cref="T:System.Collections.IEnumerable"/>
+            of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Attributes(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement},System.Xml.XLinq.XName)">
+            <summary>
+            Returns the <see cref="T:System.Xml.XLinq.XAttribute"/>s that have a matching <see cref="T:System.Xml.XLinq.XName"/>.  Each
+            <see cref="T:System.Xml.XLinq.XElement"/>'s <see cref="T:System.Xml.XLinq.XAttribute"/>s in the target <see cref="T:System.Collections.IEnumerable"/> 
+            of <see cref="T:System.Xml.XLinq.XElement"/> are scanned for a matching <see cref="T:System.Xml.XLinq.XName"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XAttribute"/> containing the XML
+            Attributes with a matching <see cref="T:System.Xml.XLinq.XName"/> for every <see cref="T:System.Xml.XLinq.XElement"/> in 
+            the target <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Ancestors(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the ancestors (parent
+            and it's parent up to the root) of each of the <see cref="T:System.Xml.XLinq.XElement"/>s in this 
+            <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the ancestors (parent
+            and it's parent up to the root) of each of the <see cref="T:System.Xml.XLinq.XElement"/>s in this 
+            <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Ancestors(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement},System.Xml.XLinq.XName)">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the ancestors (parent
+            and it's parent up to the root) that have a matching <see cref="T:System.Xml.XLinq.XName"/>.  This is done for each 
+            <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the ancestors (parent
+            and it's parent up to the root) that have a matching <see cref="T:System.Xml.XLinq.XName"/>.  This is done for each 
+            <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Descendants``1(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of the requested type containing the descendants (children
+            and their children down to the leaf level) that have a matching type.  This is done for each 
+            <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the parents (up
+            to the root) that have a matching <see cref="T:System.Xml.XLinq.XName"/>.  This is done for each <see cref="T:System.Xml.XLinq.XElement"/>
+            in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Descendants(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the descendants (children
+            and their children down to the leaf level).  This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in  
+            this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the descendants (children
+            and their children down to the leaf level).  This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in  
+            this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Descendants(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement},System.Xml.XLinq.XName)">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the descendants (children
+            and their children down to the leaf level) that have a matching <see cref="T:System.Xml.XLinq.XName"/>.  This is done 
+            for each <see cref="T:System.Xml.XLinq.XElement"/> in the target <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the descendants (children
+            and their children down to the leaf level) that have a matching <see cref="T:System.Xml.XLinq.XName"/>.  This is done 
+            for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Elements``1(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the child elements
+            of the requested type.  This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in this 
+            <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the child elements
+            of the requested type.  This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in this 
+            <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Elements(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the child elements
+            for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the child elements
+            for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Elements(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement},System.Xml.XLinq.XName)">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the child elements
+            with a matching for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the child elements
+            for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Remove(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XAttribute})">
+            <summary>
+            Removes each <see cref="T:System.Xml.XLinq.XAttribute"/> represented in this <see cref="T:System.Collections.IEnumerable"/> of
+            <see cref="T:System.Xml.XLinq.XAttribute"/>.  Note that this method uses snapshot semantics (copies the
+            attributes to a <see cref="T:System.Collections.Generic.List`1"/> before deleting each).
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.Remove``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Removes each <see cref="T:System.Xml.XLinq.XNode"/> represented in this <see cref="T:System.Collections.IEnumerable"/>
+            T which must be a derived from <see cref="T:System.Xml.XLinq.XNode"/>.  Note that this method uses snapshot semantics 
+            (copies the <see cref="T:System.Xml.XLinq.XNode"/>s to a List before deleting each).
+            </summary>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.SelfAndAncestors(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's ancestors (parent and it's parent up to the root).
+            This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of 
+            <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's ancestors (parent and it's parent up to the root).
+            This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of 
+            <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.SelfAndAncestors(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement},System.Xml.XLinq.XName)">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's ancestors (parent and it's parent up to the root)
+            that match the passed in <see cref="T:System.Xml.XLinq.XName"/>.  This is done for each 
+            <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's ancestors (parent and it's parent up to the root)
+            that match the passed in <see cref="T:System.Xml.XLinq.XName"/>.  This is done for each 
+            <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.SelfAndDescendants``1(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of the requested type from the <see cref="T:System.Xml.XLinq.XElement"/> and 
+            it's descendants (children and children's children down to the leaf nodes).  This is done for 
+            each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of the requested type from the <see cref="T:System.Xml.XLinq.XElement"/> and 
+            it's descendants (children and children's children down to the leaf nodes).  This is done for 
+            each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.SelfAndDescendants(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement})">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's descendants (children and children's children down 
+            to the leaf nodes).  This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> 
+            of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's descendants (children and children's children down 
+            to the leaf nodes).  This is done for each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> 
+            of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:System.Xml.XLinq.XElementSequence.SelfAndDescendants(System.Collections.Generic.IEnumerable{System.Xml.XLinq.XElement},System.Xml.XLinq.XName)">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's descendants (children and children's children down 
+            to the leaf nodes) that match the passed in <see cref="T:System.Xml.XLinq.XName"/>.  This is done for 
+            each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/> containing the 
+            <see cref="T:System.Xml.XLinq.XElement"/> and it's descendants (children and children's children down 
+            to the leaf nodes) that match the passed in <see cref="T:System.Xml.XLinq.XName"/>.  This is done for 
+            each <see cref="T:System.Xml.XLinq.XElement"/> in this <see cref="T:System.Collections.IEnumerable"/> of <see cref="T:System.Xml.XLinq.XElement"/>.
+            </returns>
+        </member>
+    </members>
+</doc>

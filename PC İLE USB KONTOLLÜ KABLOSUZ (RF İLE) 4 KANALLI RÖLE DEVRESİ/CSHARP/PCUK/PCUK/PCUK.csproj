@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BC6BC41-0C35-44F3-91CE-E2CE5A3BF6C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PCUK</RootNamespace>
+    <AssemblyName>PCUK</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1467230490_usb_disk.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DLinq, Version=1.0.2124.23838, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.DLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Query, Version=1.0.2124.23836, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.XLinq, Version=1.0.2124.23840, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Xml.XLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="UsbLibrary, Version=1.0.2630.26688, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\UsbLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsBagliAygitlar.cs" />
+    <Compile Include="ClsDegiskenler.cs" />
+    <Compile Include="FrmBagliCihazlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBagliCihazlar.Designer.cs">
+      <DependentUpon>FrmBagliCihazlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIletisim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIletisim.Designer.cs">
+      <DependentUpon>FrmIletisim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCUK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCUK.Designer.cs">
+      <DependentUpon>PCUK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32API.cs" />
+    <EmbeddedResource Include="FrmBagliCihazlar.resx">
+      <DependentUpon>FrmBagliCihazlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIletisim.resx">
+      <DependentUpon>FrmIletisim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCUK.resx">
+      <DependentUpon>PCUK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Pictures\dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Pictures\JMTechLogo72x72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edtech-touch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1467230118_vector_66_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1467230371_OFFice-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1467230410_usb_disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1467230490_usb_disk.ico" />
+    <None Include="Resources\divider.png" />
+    <None Include="Resources\divider2.png" />
+    <None Include="Resources\dots.png" />
+    <None Include="Resources\Telefon.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\IletisimUstCubuk.png" />
+    <None Include="Resources\1467440339_Close.png" />
+    <None Include="Resources\20101117195800_971985.jpg" />
+    <None Include="Resources\10156-five-wall-colour-iphone-hd-wallpaper_340x510.jpg" />
+    <None Include="Resources\1467440067_close_red.png" />
+    <None Include="Resources\Color-Pulse-Wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

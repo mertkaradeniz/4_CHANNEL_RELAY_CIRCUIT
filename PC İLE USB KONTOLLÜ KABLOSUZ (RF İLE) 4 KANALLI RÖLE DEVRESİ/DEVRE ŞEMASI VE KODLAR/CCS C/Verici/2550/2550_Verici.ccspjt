@@ -1,0 +1,21 @@
+[PROJECT]
+Target=2550_Verici.hex
+Processor_Text=PIC18F2550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=2550_Verici.c
+[Directories]
+Include=C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Users\JMTech\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\TASARIM\CCS C\Verici\2550\;C:\Users\JMTech\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\TASARIM\CCS C\Verici\2550\C:\Program Files\PICC\devices\;C:\Users\Melisa\Desktop\PC ÝLE USB KONTOLLÜ KABLOSUZ (RF ÝLE) 4 KANALLI RÖLE DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\2550\;C:\Users\JMTech\Desktop\PC ÝLE USB KONTOLLÜ KABLOSUZ (RF ÝLE) 4 KANALLI RÖLE DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\2550\
+[2550_Verici.c]
+Type=4
+[mru-list]
+1=2550_Verici.c
+[Opened Files]
+1=2550_Verici.c
+2=
+3=
+4=
+[Units]
+Count=1
+1=2550_Verici (main)

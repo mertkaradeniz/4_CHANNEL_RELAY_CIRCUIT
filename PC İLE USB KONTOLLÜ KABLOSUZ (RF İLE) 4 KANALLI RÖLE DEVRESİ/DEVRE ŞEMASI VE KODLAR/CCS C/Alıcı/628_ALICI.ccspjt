@@ -1,0 +1,56 @@
+[PROJECT]
+Target=628_ALICI.hex
+Processor_Text=PIC16F628
+CCSVersion=5.007
+Compiler=PCM
+Development_Mode=
+ToolSuite=CCS
+[Target Data]
+FileList=628_ALICI.c
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+[Directories]
+Include=C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\
+Library=
+LinkerScript=
+[628_ALICI.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=628_ALICI.c
+[Opened Files]
+1=..\Verici\4550\4550_Verici.c
+2=628_ALICI.c
+3=
+4=
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[CompilerVersion]
+Fixed=
+[Units]
+Count=1
+1=628_ALICI (main)

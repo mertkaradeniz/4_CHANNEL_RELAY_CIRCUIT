@@ -1,0 +1,48 @@
+#include <16F628.H>
+#fuses  INTRC_IO,NOMCLR,NOWDT,NOPROTECT,NOBROWNOUT,NOLVP,NOPUT,NOCPD
+#use delay(clock=4000000)
+#use rs232(baud=9600, rcv=pin_B1,ERRORS)
+
+#define VeriTransferLed pin_a3
+#define DevrePowerLedLed pin_a2
+int i=0; 
+
+void UsbTransferVeriOnayi()
+{
+   for(i=0;i<5;i++)
+   {
+      output_high(VeriTransferLed);
+      delay_ms(50);
+      output_low(VeriTransferLed);   
+      delay_ms(50);  
+   }
+}
+
+void main(){    
+  
+   setup_timer_1(T1_DISABLED);     // T1 zamanlayýcýsý devre dýþý
+   setup_timer_2(T2_DISABLED,0,1); // T2 zamanlayýcýsý devre dýþý
+   setup_CCP1(CCP_OFF);            // CCP1 birimi devre dýþý
+
+   set_tris_b(0xFF); 
+   set_tris_a(0x00); 
+  
+   output_low(VeriTransferLed);
+   output_High(DevrePowerLedLed);
+
+   while(true)
+   {      
+      if(getc()=='H') {
+      if(getc()==110){ output_high(pin_b3); UsbTransferVeriOnayi();}  //1 Röle Aç
+      if(getc()==120){ output_low(pin_b3); UsbTransferVeriOnayi(); }   //1 Röle Kapat
+      if(getc()==130){ output_high(pin_b7); }  //2 Röle Aç
+      if(getc()==140){ output_low(pin_b7); }   //2 Röle Kapat
+      if(getc()==150){ output_high(pin_b6); }  //3 Röle Aç
+      if(getc()==160){ output_low(pin_b6); }   //3 Röle Kapat
+      if(getc()==170){ output_high(pin_b5); }  //4 Röle Aç
+      if(getc()==180){ output_low(pin_b5); }   //4 Röle Kapat
+   }
+   }
+}
+ 
+ 

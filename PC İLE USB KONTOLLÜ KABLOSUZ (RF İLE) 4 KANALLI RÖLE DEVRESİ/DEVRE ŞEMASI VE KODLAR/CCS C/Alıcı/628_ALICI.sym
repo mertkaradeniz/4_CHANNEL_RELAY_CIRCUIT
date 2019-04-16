@@ -1,0 +1,52 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01F.6   C1OUT
+01F.7   C2OUT
+020     i
+021     @GETCH_1_.@SCRATCH1
+021     MAIN.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09B-09C @READ_PROGRAM_MEMORY8.P1
+
+ROM Allocation:
+000004  @GETCH_1_
+000029  MAIN
+000029  @cinit1
+000030  @cinit2
+
+Project Directory:
+    C:\Users\Melisa\Desktop\PC ÝLE USB KONTOLLÜ KABLOSUZ (RF ÝLE) 4 KANALLI RÖLE DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Alýcý\
+
+Project Files:
+    628_ALICI.c                                             [02-Tem-16 03:07  CRC=1849B33A]
+    ..\..\..\..\..\..\..\Program Files\PICC\devices\16F628.H [21-Haz-13 16:04  CRC=99CC043B]
+
+Source signature=4BE1BBB0
+
+Units:
+    628_ALICI (main)
+
+Compiler Settings:
+    Processor:      PIC16F628
+    Pointer Size:   16
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   628_ALICI.xsym
+    Errors:      628_ALICI.err
+    Ext Symbols: 628_ALICI.esym
+    INHX8:       628_ALICI.hex
+    Symbols:     628_ALICI.sym
+    List:        628_ALICI.lst
+    Debug/COFF:  628_ALICI.cof
+    Project:     628_ALICI.ccspjt
+    Call Tree:   628_ALICI.tre
+    Statistics:  628_ALICI.STA

@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vendors>
+  <vendor vid="0506" name="3Com Corp.">
+    <product pid="00a0" description="3CREB96 Bluetooth Adapter" />
+    <product pid="00a1" description="3Com Bluetooth USB Device" />
+    <product pid="00a2" description="3Com Bluetooth USB Device" />
+    <product pid="00df" description="3Com Home Connect lite" />
+    <product pid="0100" description="HomeConnect ADSL Modem USB Driver" />
+    <product pid="03e8" description="3C19250 Ethernet [klsi]" />
+    <product pid="11f8" description="3Com HomeConnect Ethernet USB Adapter (3C460)" />
+    <product pid="2922" description="3Com HomeConnect Cable Modem External with USB" />
+    <product pid="0a11" description="3CRWE254G72 802.11g Adapter" />
+    <product pid="4601" description="3C460B 10/100 Ethernet Adapter" />
+    <product pid="f002" description="3CP4218 ADSL Modem (pre-init)" />
+    <product pid="f003" description="3CP4218 ADSL Modem" />
+    <product pid="f100" description="3CP4218 ADSL Modem (pre-init)" />
+  </vendor>
+  <vendor vid="044e" name="Alps Electric Co., Ltd">
+    <product pid="2002" description="MD-5500 Printer" />
+    <product pid="3001" description="UGTZ4 Bluetooth" />
+    <product pid="3005" description="ALPS Tümleşik Bluetooth Aygıtı" />
+    <product pid="3006" description="Alps Bluetooth USB Bağdaştırıcı" />
+  </vendor>
+  <vendor vid="050d" name="Belkin Components">
+    <product pid="0081" description="Belkin Bluetooth Bağdaştırıcı" />
+    <product pid="0084" description="Belkin Bluetooth Bağdaştırıcı" />
+  </vendor>
+  <vendor vid="04a5" name="BenQ Corp.">
+    <product pid="0001" description="Keyboard" />
+    <product pid="12a6" description="AcerScan C310U" />
+    <product pid="1a20" description="Prisa 310U" />
+    <product pid="1a2a" description="Prisa 620U" />
+    <product pid="2022" description="Prisa 320U/340U" />
+    <product pid="2040" description="Prisa 620UT" />
+    <product pid="2060" description="Prisa 620U+/640U" />
+    <product pid="207e" description="Prisa 640BU" />
+    <product pid="20b0" description="S2W 3300U/4300U" />
+    <product pid="20be" description="Prisa 640BT" />
+    <product pid="20c0" description="Prisa 1240UT" />
+    <product pid="20de" description="S2W 4300U+" />
+    <product pid="20fc" description="Benq 5000" />
+    <product pid="20fe" description="SW2 5300U" />
+    <product pid="3003" description="Benq WebCam" />
+    <product pid="3008" description="Benq 1500" />
+    <product pid="300a" description="Benq 3410" />
+    <product pid="300c" description="Benq 1016" />
+    <product pid="9213" description="Kbd Hub" />
+  </vendor>
+  <vendor vid="05d1" name="Brain Boxes">
+    <product pid="0003" description="Brain Boxes USB Bluetooth Bağdaştırıcı BL-554" />
+  </vendor>
+  <vendor vid="0a5c" name="Broadcom Corp.">
+    <product pid="200a" description="Blutonium BCM2035 Bluetooth 2.4 GHz Tek Çipli Verici/Alıcı" />
+    <product pid="200f" description="BCM2033 Bluetooth 2.4 GHz Tek Çipli Verici/Alıcı" />
+    <product pid="2033" description="BCM2033 Bluetooth" />
+    <product pid="2035" description="BCM2035 Bluetooth" />
+  </vendor>
+  <vendor vid="04f9" name="Brother Industries, Ltd">
+    <product pid="0002" description="HL-1050 Laser Printer" />
+    <product pid="0006" description="HL-1240 Laser Printer" />
+    <product pid="0007" description="HL-1250 Laser Printer" />
+    <product pid="0008" description="HL-1270 Laser Printer" />
+    <product pid="000d" description="HL-1440 Laser Printer" />
+    <product pid="010f" description="MFC 5100C" />
+    <product pid="0111" description="MFC 6800" />
+    <product pid="2004" description="PT-2300/2310 p-Touch Laber Printer" />
+  </vendor>
+  <vendor vid="0a12" name="Cambridge Silicon Radio Ltd.">
+    <product pid="0001" description="Genel Bluetooth Radyo" />
+    <product pid="0002" description="Frontline Test Equipment Bluetooth Device" />
+    <product pid="0003" description="CSR Nanosira" />
+    <product pid="0004" description="CSR Nanosira WHQL Reference Radyo" />
+    <product pid="0005" description="CSR Nanosira-Çoklu Ortam" />
+    <product pid="0006" description="CSR Nanosira-Çoklu Ortam WHQL Reference Radyo" />
+    <product pid="0007" description="CSR Nanosira3-ROM" />
+    <product pid="0008" description="CSR Nanosira3-ROM" />
+    <product pid="0009" description="CSR Nanosira4-EDR WHQL Reference Radio" />
+    <product pid="000a" description="CSR Nanosira4-EDR-ROM" />
+    <product pid="000b" description="CSR Nanosira5-ROM" />
+    <product pid="0100" description="CSR Casira with BlueCore2-External Module" />
+    <product pid="0101" description="CSR Casira with BlueCore2-Flash Module" />
+    <product pid="0102" description="CSR Casira with BlueCore3-Multimedia Module" />
+    <product pid="0103" description="CSR Casira with BlueCore3-Flash Module" />
+    <product pid="0104" description="CSR Casira with BlueCore4-External Module" />
+    <product pid="0105" description="CSR Casira with BlueCore4-Multimedia Module" />
+    <product pid="1000" description="Genel Bluetooth Radyo (HID proxy mode)" />
+    <product pid="ffff" description="CSR USB Bluetooth Device in DFU State" />
+  </vendor>
+  <vendor vid="04a9" name="Canon, Inc.">
+    <product pid="1051" description="BJC-3000 Color Printer" />
+    <product pid="1056" description="BJC-2110 Color Printer" />
+    <product pid="105b" description="S600 Printer" />
+    <product pid="105d" description="S450 Printer" />
+    <product pid="1062" description="S500 Printer" />
+    <product pid="1064" description="S300 Printer" />
+    <product pid="106b" description="S520 Printer" />
+    <product pid="106d" description="S750 Printer" />
+    <product pid="1072" description="I850 Printer" />
+    <product pid="1073" description="I550 Printer" />
+    <product pid="1074" description="S330 Printer" />
+    <product pid="1094" description="PIXMA iP3000x Printer" />
+    <product pid="2201" description="CanoScan FB320U" />
+    <product pid="2202" description="CanoScan FB620U" />
+    <product pid="2204" description="CanoScan FB630U" />
+    <product pid="2205" description="CanoScan FB1210U" />
+    <product pid="2206" description="CanoScan N650U/N656U" />
+    <product pid="2207" description="CanoScan 1220U" />
+    <product pid="2208" description="CanoScan D660U" />
+    <product pid="220a" description="CanoScan D2400UF" />
+    <product pid="220b" description="CanoScan D646U" />
+    <product pid="220c" description="CanoScan D1250U2" />
+    <product pid="220d" description="CanoScan N670U/N676U/LiDE 20" />
+    <product pid="220e" description="CanoScan N1240U/LiDE 30" />
+    <product pid="220f" description="CanoScan 8000F" />
+    <product pid="2210" description="CanoScan 9900F" />
+    <product pid="2212" description="CanoScan 5000F" />
+    <product pid="2213" description="LiDE 50/LiDE 35" />
+    <product pid="2215" description="CanoScan 3000/3000F/3000ex" />
+    <product pid="2216" description="CanoScan 3200F" />
+    <product pid="2217" description="CanoScan 5200F" />
+    <product pid="221e" description="CanoScan 8400F" />
+    <product pid="2611" description="SmartBase MPC400" />
+    <product pid="262b" description="LaserShot LBP-1120 Printer" />
+    <product pid="3041" description="PowerShot S10" />
+    <product pid="3042" description="CanoScan FS4000US Film Scanner" />
+    <product pid="3043" description="PowerShot S20" />
+    <product pid="3044" description="EOS D30" />
+    <product pid="3045" description="PowerShot S100" />
+    <product pid="3046" description="IXY Digital" />
+    <product pid="3047" description="Digital IXUS" />
+    <product pid="3048" description="PowerShot G1" />
+    <product pid="3049" description="PowerShot Pro90 IS" />
+    <product pid="304b" description="IXY Digital 300" />
+    <product pid="304c" description="PowerShot S300" />
+    <product pid="304d" description="Digital IXUS 300" />
+    <product pid="304e" description="PowerShot A20" />
+    <product pid="304f" description="PowerShot A10" />
+    <product pid="3051" description="PowerShot S110" />
+    <product pid="3052" description="Digital IXUS V" />
+    <product pid="3055" description="PowerShot G2" />
+    <product pid="3056" description="PowerShot S40" />
+    <product pid="3057" description="PowerShot S30" />
+    <product pid="3058" description="PowerShot A40" />
+    <product pid="3059" description="PowerShot A30" />
+    <product pid="305b" description="ZR45MC Digital Camcorder" />
+    <product pid="3060" description="EOS D60" />
+    <product pid="3061" description="PowerShot A100" />
+    <product pid="3062" description="PowerShot A200" />
+    <product pid="3065" description="PowerShot S200" />
+    <product pid="3066" description="Digital IXUS 330" />
+    <product pid="3067" description="MV550i Digital Video Camera" />
+    <product pid="3069" description="PowerShot G3" />
+    <product pid="306b" description="MVX2i Digital Video Camera" />
+    <product pid="306c" description="PowerShot S45" />
+    <product pid="306d" description="PowerShot S45 PtP Mode" />
+    <product pid="306f" description="PowerShot G3 (ptp)" />
+    <product pid="3070" description="PowerShot S230" />
+    <product pid="3071" description="PowerShot S230 (ptp)" />
+    <product pid="3072" description="PowerShot SD100 / Digital IXUS 2 (ptp)" />
+    <product pid="3073" description="PowerShot A70 (ptp)" />
+    <product pid="3074" description="PowerShot A60 (ptp)" />
+    <product pid="3075" description="IXUS 400 Camera" />
+    <product pid="3076" description="PowerShot A300" />
+    <product pid="3077" description="PowerShot S50" />
+    <product pid="3078" description="ZR70MC Digital Camcorder" />
+    <product pid="307b" description="MV630i Digital Video Camera" />
+    <product pid="307f" description="Optura 20" />
+    <product pid="3081" description="Optura 10" />
+    <product pid="3083" description="EOS 10D" />
+    <product pid="3084" description="EOS 300D / EOS Digital Rebel" />
+    <product pid="3085" description="PowerShot G5" />
+    <product pid="3099" description="EOS 300D (ptp)" />
+    <product pid="309a" description="PowerShot A80" />
+    <product pid="309b" description="Digital IXUS (ptp)" />
+    <product pid="309c" description="PowerShot S1 IS" />
+    <product pid="30b4" description="PowerShot S500" />
+    <product pid="30b5" description="PowerShot A75" />
+    <product pid="30b9" description="Powershot A85" />
+    <product pid="30ba" description="PowerShot S410 Digital Elph" />
+    <product pid="30bb" description="PowerShot A95" />
+    <product pid="30bf" description="Digital IXUS 40" />
+    <product pid="30eb" description="EOS 20D" />
+    <product pid="30ec" description="EOS 20D (ptp)" />
+    <product pid="30ee" description="EOS 350D" />
+    <product pid="30ef" description="EOS 350D (ptp)" />
+    <product pid="3138" description="PowerShot A710 IS" />
+  </vendor>
+  <vendor vid="041e" name="Creative Technology, Ltd">
+    <product pid="1002" description="Nomad II" />
+    <product pid="1003" description="Blaster GamePad Cobra" />
+    <product pid="1050" description="GamePad Cobra" />
+    <product pid="3010" description="SoundBlaster MP3+" />
+    <product pid="3020" description="SoundBlaster Audigy 2 NX" />
+    <product pid="4003" description="VideoBlaster WebCam Go Plus [W9967CF]" />
+    <product pid="4004" description="Nomad II MG" />
+    <product pid="4005" description="WebCam Blaster Go ES" />
+    <product pid="400a" description="PC-Cam 300" />
+    <product pid="400b" description="PC-Cam 600" />
+    <product pid="400c" description="WebCam 5 [pwc]" />
+    <product pid="400d" description="WebCam PD1001" />
+    <product pid="4011" description="WebCam PRO eX" />
+    <product pid="4013" description="PC-Cam 750" />
+    <product pid="4015" description="CardCam Value" />
+    <product pid="4017" description="WebCam Mobile" />
+    <product pid="4018" description="WebCam Vista" />
+    <product pid="401c" description="WebCam NX [PD1110]" />
+    <product pid="401d" description="WebCam NX Ultra" />
+    <product pid="401e" description="WebCam NX Pro" />
+    <product pid="401f" description="Webcam Notebook" />
+    <product pid="4036" description="Webcam Live!/Live! Pro" />
+    <product pid="403a" description="WebCam NX Pro 2" />
+    <product pid="403c" description="WebCam Live! Ultra" />
+    <product pid="403d" description="WebCam Notebook Ultra" />
+    <product pid="4100" description="Nomad Jukebox 2" />
+    <product pid="4101" description="Nomad Jukebox 3" />
+    <product pid="4106" description="Nomad MuVo" />
+    <product pid="4108" description="Nomad Jukebox Zen" />
+    <product pid="4109" description="Nomad Jukebox Zen NX" />
+    <product pid="410b" description="Nomad Jukebox Zen USB 2.0" />
+    <product pid="410c" description="Nomad MuVo NX" />
+    <product pid="4110" description="Nomad Jukebox Zen Xtra" />
+    <product pid="4111" description="Dell Digital Jukebox" />
+    <product pid="4116" description="MuVo^2" />
+    <product pid="4117" description="Nomad MuVo TX" />
+    <product pid="411b" description="Zen Touch" />
+    <product pid="411d" description="Zen" />
+    <product pid="411e" description="Zen Micro" />
+    <product pid="4123" description="Zen Portable Media Center" />
+    <product pid="4126" description="Dell DJ (2nd gen)" />
+    <product pid="4127" description="Dell DJ" />
+    <product pid="412b" description="MuVo N200 with FM radio" />
+    <product pid="4134" description="Zen Neeon" />
+    <product pid="4136" description="Zen Sleek" />
+    <product pid="4139" description="Zen Nano Plus" />
+    <product pid="413c" description="Zen MicroPhoto" />
+  </vendor>
+  <vendor vid="413c" name="Dell">
+    <product pid="2002" description="SK-8125 Keyboard" />
+    <product pid="2100" description="SK-3106 Keyboard" />
+    <product pid="2101" description="SmartCard Reader Keyboard" />
+    <product pid="3010" description="Optical Wheel Mouse" />
+    <product pid="8000" description="Dell TrueMobile Bluetooth Modülü" />
+    <product pid="8100" description="TrueMobile 1180 802.11b Adapter" />
+    <product pid="8103" description="Dell Kablosuz 350 Bluetooth Modülü" />
+  </vendor>
+  <vendor vid="05b1" name="FIC">
+    <product pid="1389" description="FIC Bluetooth Kablosuz Bağdaştırıcı" />
+  </vendor>
+  <vendor vid="0525" name="GVC">
+    <product pid="a220" description="GVC Bluetooth Kablosuz Bağdaştırıcı" />
+  </vendor>
+  <vendor vid="03f0" name="Hewlett-Packard">
+    <product pid="0000" description="DeskJet 895c" />
+    <product pid="0101" description="ScanJet 4100c" />
+    <product pid="0102" description="PhotoSmart S20" />
+    <product pid="0104" description="DeskJet 880c/970c" />
+    <product pid="0105" description="ScanJet 4200c" />
+    <product pid="0107" description="CD-Writer Plus" />
+    <product pid="010c" description="Multimedia Keyboard Hub" />
+    <product pid="0111" description="G55xi Printer/Scanner/Copier" />
+    <product pid="011c" description="hn210w 802.11b Adapter" />
+    <product pid="011d" description="HP Bluetooth Module" />
+    <product pid="0201" description="ScanJet 6200c" />
+    <product pid="0202" description="PhotoSmart S20" />
+    <product pid="0204" description="DeskJet 815c" />
+    <product pid="0205" description="ScanJet 3300c" />
+    <product pid="0207" description="CD-Writer Plus 8200e" />
+    <product pid="020c" description="Multimedia Keyboard" />
+    <product pid="0304" description="DeskJet 810c/812c" />
+    <product pid="0305" description="ScanJet 4300c" />
+    <product pid="0311" description="OfficeJet G85xi" />
+    <product pid="0317" description="LaserJet 1200" />
+    <product pid="0401" description="ScanJet 5200c" />
+    <product pid="0404" description="DeskJet 830c/832c" />
+    <product pid="0405" description="ScanJet 3400cse" />
+    <product pid="0504" description="DeskJet 885c" />
+    <product pid="0505" description="ScanJet 2100c" />
+    <product pid="050c" description="5219 Wireless Keyboard" />
+    <product pid="0517" description="LaserJet 1000" />
+    <product pid="051d" description="HP integrated module with Bluetooth wireless technology" />
+    <product pid="0601" description="ScanJet 6300c" />
+    <product pid="0604" description="DeskJet 840c" />
+    <product pid="0605" description="ScanJet 2200c" />
+    <product pid="0624" description="HP Bluetooth Dongle" />
+    <product pid="0701" description="ScanJet 5300c/5370c" />
+    <product pid="0704" description="DeskJet 825c" />
+    <product pid="0705" description="ScanJet 4400c" />
+    <product pid="0712" description="DeskJet 1180c" />
+    <product pid="0801" description="ScanJet 7400c" />
+    <product pid="0804" description="DeskJet 816c" />
+    <product pid="0901" description="ScanJet 2300c" />
+    <product pid="0904" description="DeskJet 845c" />
+    <product pid="0c24" description="HP USB BT Verici/Alıcı [1.2]" />
+    <product pid="1004" description="DeskJet 970c/970cse" />
+    <product pid="1005" description="ScanJet 5400c" />
+    <product pid="1016" description="Jornada 548 / iPAQ HW6515 Pocket PC" />
+    <product pid="1104" description="DeskJet 959c" />
+    <product pid="1105" description="ScanJet 5470c" />
+    <product pid="1116" description="Jornada 568 Pocket PC" />
+    <product pid="1151" description="750xi Printer/Scanner/Copier" />
+    <product pid="1204" description="DeskJet 930c" />
+    <product pid="1305" description="ScanJet 4570c" />
+    <product pid="1317" description="LaserJet 1005" />
+    <product pid="1405" description="Scanjet 3670" />
+    <product pid="1504" description="DeskJet 920c" />
+    <product pid="1604" description="DeskJet 940c" />
+    <product pid="171d" description="Broadcom Bluetooth 2.0+EDR USB Notebook Module" />
+    <product pid="1904" description="DeskJet 3820" />
+    <product pid="181d" description="HP integrated module with Bluetooth 2.0 wireless technology" />
+    <product pid="1c17" description="Color LaserJet 2550" />
+    <product pid="1e11" description="PSC-950" />
+    <product pid="2002" description="Hub" />
+    <product pid="2004" description="DeskJet 640c" />
+    <product pid="2005" description="ScanJet 3570c" />
+    <product pid="2104" description="DeskJet 630c" />
+    <product pid="2205" description="ScanJet 3500c" />
+    <product pid="2304" description="DeskJet 656c" />
+    <product pid="2305" description="ScanJet 3970c" />
+    <product pid="2811" description="PSC-2100" />
+    <product pid="2d11" description="OfficeJet 6110" />
+    <product pid="3002" description="photosmart P1000" />
+    <product pid="3004" description="deskjet 980c" />
+    <product pid="3005" description="ScanJet 4600 series" />
+    <product pid="3011" description="hp psc 1100 series" />
+    <product pid="3016" description="HP USB Sync 1630" />
+    <product pid="3017" description="USB Printing Support" />
+    <product pid="3102" description="PhotoSmart P1100 Printer w/ Card Reader" />
+    <product pid="3104" description="DeskJet 960c" />
+    <product pid="3111" description="hp officejet 4100 series" />
+    <product pid="3116" description="HP USB Sync 1631" />
+    <product pid="3117" description="HP EWS 2605dtn" />
+    <product pid="3202" description="photosmart 1215" />
+    <product pid="3211" description="hp officejet 4105 series" />
+    <product pid="3216" description="HP USB Sync 1632" />
+    <product pid="3217" description="HP LaserJet 3050 (DOT4USB)" />
+    <product pid="3302" description="photosmart 1218" />
+    <product pid="3304" description="DeskJet 990c" />
+    <product pid="3317" description="HP LaserJet 3052 (DOT4USB)" />
+    <product pid="3402" description="photosmart 1115" />
+    <product pid="3404" description="DeskJet 6122" />
+    <product pid="3417" description="HP LaserJet 3055 (DOT4USB)" />
+    <product pid="3502" description="photosmart 230" />
+    <product pid="3504" description="DeskJet 6127c" />
+    <product pid="3511" description="psc 2300 (USBPRINT)" />
+    <product pid="3517" description="HP LaserJet 3390 (DOT4USB)" />
+    <product pid="3602" description="photosmart 1315" />
+    <product pid="3611" description="psc 2400 (USBPRINT)" />
+    <product pid="3617" description="HP EWS 2605" />
+    <product pid="3711" description="psc 2500 (USBPRINT)" />
+    <product pid="3802" description="photosmart 100" />
+    <product pid="3817" description="HP EWS P2015" />
+    <product pid="3902" description="photosmart 130" />
+    <product pid="3a02" description="photosmart 7150" />
+    <product pid="3a11" description="hp officejet 5500 series (DOT4USB)" />
+    <product pid="3a17" description="USB Printing Support" />
+    <product pid="3b02" description="photosmart 7150~" />
+    <product pid="3b11" description="hp psc 1300 series (DOT4USB)" />
+    <product pid="3c02" description="PhotoSmart 7350" />
+    <product pid="3c11" description="hp psc 1358 (DOT4USB)" />
+    <product pid="3d02" description="photosmart 7350~" />
+    <product pid="3d11" description="OfficeJet 4215" />
+    <product pid="3e02" description="photosmart 7550" />
+    <product pid="3f02" description="photosmart 7550~" />
+    <product pid="3f11" description="PSC-1315/PSC-1317" />
+    <product pid="4002" description="PhotoSmart 720 / PhotoSmart 935 (storage)" />
+    <product pid="4004" description="hp cp1160" />
+    <product pid="4016" description="HP USB Sync 1640" />
+    <product pid="4102" description="PhotoSmart 618" />
+    <product pid="4105" description="HP Scanjet 4370" />
+    <product pid="4111" description="Officejet 7200 series (DOT4USB)" />
+    <product pid="4116" description="HP USB Sync 1641" />
+    <product pid="4117" description="USB Printing Support" />
+    <product pid="4202" description="PhotoSmart 812" />
+    <product pid="4205" description="HP Scanjet G3010" />
+    <product pid="4211" description="Officejet 7300 series (DOT4USB)" />
+    <product pid="4216" description="HP USB Sync 1642" />
+    <product pid="4302" description="PhotoSmart 850 (ptp)" />
+    <product pid="4311" description="Officejet 7400 series (DOT4USB)" />
+    <product pid="4402" description="PhotoSmart 935 (ptp)" />
+    <product pid="4511" description="Photosmart 2600 (USBSTORE)" />
+    <product pid="4611" description="Photosmart 2700 (USBSTORE)" />
+    <product pid="4811" description="PSC 1600 (USBPRINT)" />
+    <product pid="4911" description="PSC 2350 (USBPRINT)" />
+    <product pid="4b11" description="HP Officejet 6200" />
+    <product pid="4c11" description="HP PSC 1500 series (DOT4USB)" />
+    <product pid="4d11" description="PSC 1400 (USBPRINT)" />
+    <product pid="4e11" description="Photosmart 2570 series (DOT4USB)" />
+    <product pid="4f11" description="Officejet 5600 (USBHUB)" />
+    <product pid="5004" description="DeskJet 995c" />
+    <product pid="5011" description="Photosmart 3100 Series (DOT4USB)" />
+    <product pid="5016" description="HP USB Sync 1650" />
+    <product pid="5111" description="Photosmart 3200 Series (DOT4USB)" />
+    <product pid="5116" description="HP USB Sync 1651" />
+    <product pid="5211" description="Photosmart 3300 Series (DOT4USB)" />
+    <product pid="5216" description="HP USB Sync 1652" />
+    <product pid="5311" description="HP Officejet 6300" />
+    <product pid="5411" description="Officejet 4300 (USBPRINT)" />
+    <product pid="5511" description="Deskjet F300 (USBPRINT)" />
+    <product pid="5611" description="HP Photosmart C3100 series (DOT4USB)" />
+    <product pid="5711" description="HP Photosmart C4100 series (DOT4USB)" />
+    <product pid="5811" description="HP Photosmart C5100 series (DOT4USB)" />
+    <product pid="5911" description="HP Photosmart C6100 series (DOT4USB)" />
+    <product pid="5a11" description="HP Photosmart C7100 series (DOT4USB)" />
+    <product pid="5b11" description="HP Officejet J2100 Series (DOT4USB)" />
+    <product pid="6004" description="DeskJet 5550" />
+    <product pid="6102" description="Hewlett Packard Digital Camera" />
+    <product pid="6104" description="DeskJet 5650c" />
+    <product pid="6117" description="hp color LaserJet 3550 (DOT4USB)" />
+    <product pid="6202" description="PhotoSmart 215" />
+    <product pid="6204" description="DeskJet 5150c" />
+    <product pid="6217" description="HP Color LaserJet 4700 (DOT4USB)" />
+    <product pid="6302" description="PhotoSmart 318/612" />
+    <product pid="6317" description="HP Color LaserJet 4730mfp (DOT4USB)" />
+    <product pid="6402" description="PhotoSmart 715 (ptp)" />
+    <product pid="6417" description="HP LaserJet 5200 (DOT4USB)" />
+    <product pid="6502" description="PhotoSmart 120 (ptp)" />
+    <product pid="6602" description="PhotoSmart 320" />
+    <product pid="6617" description="HP LaserJet 5200L (DOT4USB)" />
+    <product pid="6702" description="PhotoSmart 720 (ptp)" />
+    <product pid="6717" description="HP Color LaserJet 3000 (DOT4USB)" />
+    <product pid="6802" description="PhotoSmart 620 (ptp)" />
+    <product pid="6817" description="HP Color LaserJet 3800 (DOT4USB)" />
+    <product pid="6917" description="HP Color LaserJet 3600 (DOT4USB)" />
+    <product pid="6a02" description="PhotoSmart 735 (ptp)" />
+    <product pid="6a17" description="hp LaserJet 4240 (DOT4USB)" />
+    <product pid="6c17" description="HP Color LaserJet 4610 (DOT4USB)" />
+    <product pid="7004" description="DeskJet 3320c" />
+    <product pid="7104" description="DeskJet 3420c" />
+    <product pid="7117" description="HP CM8060 Color MFP with Edgeline Technology (DOT4USB)" />
+    <product pid="7202" description="PhotoSmart 43x (ptp)" />
+    <product pid="7204" description="DeskJet 36xx" />
+    <product pid="7217" description="HP LaserJet M5035 MFP (DOT4USB)" />
+    <product pid="7304" description="DeskJet 35xx" />
+    <product pid="7317" description="HP LaserJet P3005 (DOT4USB)" />
+    <product pid="7404" description="USB Printing Support" />
+    <product pid="7417" description="HP LaserJet M4345 MFP (DOT4USB)" />
+    <product pid="7504" description="USB Printing Support" />
+    <product pid="7517" description="HP LaserJet M3035 MFP (DOT4USB)" />
+    <product pid="7604" description="USB Printing Support" />
+    <product pid="7617" description="HP LaserJet P3004 (DOT4USB)" />
+    <product pid="7704" description="Deskjet D4100 (USBPRINT)" />
+    <product pid="7717" description="HP CM8050 Color MFP with Edgeline Technology (DOT4USB)" />
+    <product pid="7804" description="HP D1360 Renkli Inkjet Yazıcı" />
+    <product pid="7817" description="HP Color LaserJet CP3505 (DOT4USB)" />
+    <product pid="7917" description="HP LaserJet M5025 MFP (DOT4USB)" />
+    <product pid="7a17" description="HP LaserJet M3027 MFP (DOT4USB)" />
+    <product pid="7b17" description="HP Color LaserJet CP4005 (DOT4USB)" />
+    <product pid="7d17" description="HP Color LaserJet CM4730 MFP (DOT4USB)" />
+    <product pid="8104" description="USB Printing Support" />
+    <product pid="811c" description="hn210e - Ethernet USB network adapter" />
+    <product pid="8204" description="USB Printing Support" />
+    <product pid="8404" description="HP Deskjet 6800 Series (DOT4USB)" />
+    <product pid="8504" description="HP Deskjet 6600 Series (DOT4USB)" />
+    <product pid="8604" description="hp deskjet 5400 series" />
+    <product pid="8704" description="hp deskjet 5900 series" />
+    <product pid="8804" description="HP Deskjet 6980 Series (DOT4USB)" />
+    <product pid="8904" description="HP Deskjet 6940 Series (DOT4USB)" />
+    <product pid="a004" description="DeskJet 5850c" />
+    <product pid="b002" description="photosmart 7200 series (DOT4USB)" />
+    <product pid="b102" description="photosmart 7200 series (DOT4USB)" />
+    <product pid="b202" description="photosmart 7600 series (DOT4USB)" />
+    <product pid="b302" description="photosmart 7600 series (DOT4USB)" />
+    <product pid="b402" description="photosmart 7700 series (DOT4USB)" />
+    <product pid="b502" description="photosmart 7700 series (DOT4USB)" />
+    <product pid="b602" description="photosmart 7900 series (DOT4USB)" />
+    <product pid="b702" description="photosmart 7900 series (DOT4USB)" />
+    <product pid="b802" description="Photosmart 7400 Series (DOT4USB)" />
+    <product pid="b902" description="Photosmart 7800 Series (USBPRINT)" />
+    <product pid="ba02" description="Photosmart 8100 Series (USBPRINT)" />
+    <product pid="bb02" description="Photosmart 8400 Series (USBPRINT)" />
+    <product pid="bc02" description="Photosmart 8700 Series (USBPRINT)" />
+    <product pid="bd02" description="HP Photosmart Pro B9100 series (DOT4USB)" />
+    <product pid="bef4" description="NEC Picty760" />
+    <product pid="c002" description="HP Photosmart 7800 Series (USBPRINT)" />
+    <product pid="c102" description="HP Photosmart 8000 Series (USBPRINT)" />
+    <product pid="c202" description="HP Photosmart 8200 Series (USBPRINT)" />
+    <product pid="c302" description="Deskjet D2300 (USBPRINT)" />
+    <product pid="c402" description="HP Photosmart D5100 series (DOT4USB)" />
+    <product pid="c502" description="HP Photosmart D6100 series (DOT4USB)" />
+    <product pid="c602" description="HP Photosmart D7100 series (DOT4USB)" />
+    <product pid="c702" description="HP Photosmart D7300 series (DOT4USB)" />
+    <product pid="c802" description="HP Photosmart D5060 Printer (DOT4USB)" />
+    <product pid="d104" description="HP Bluetooth Dongle" />
+  </vendor>
+  <vendor vid="04b3" name="IBM Corp.">
+    <product pid="3004" description="Media Access Pro Keyboard" />
+    <product pid="3016" description="UltraNav Keyboard Hub" />
+    <product pid="3018" description="UltraNav Keyboard" />
+    <product pid="3100" description="NetVista Mouse" />
+    <product pid="3103" description="ScrollPoint Pro Mouse" />
+    <product pid="3107" description="ThinkPad 800dpi Optical Travel Mouse" />
+    <product pid="3108" description="800dpi Optical Mouse w/ Scroll Point" />
+    <product pid="3109" description="Optical ScrollPoint Pro Mouse" />
+    <product pid="310b" description="Red Wheel Mouse" />
+    <product pid="4427" description="Portable CD ROM" />
+    <product pid="4525" description="Double sided CRT" />
+    <product pid="4550" description="NVRAM (128 KB)" />
+    <product pid="4554" description="Cash Drawer" />
+    <product pid="4580" description="Hub w/ NVRAM" />
+    <product pid="4581" description="4800-2xx Hub w/ Cash Drawer" />
+    <product pid="4604" description="Keyboard w/ Card Reader" />
+    <product pid="4671" description="4820 LCD w/ MSR/KB" />
+  </vendor>
+  <vendor vid="8086" name="Intel Corp.">
+    <product pid="0110" description="Easy PC Camera" />
+    <product pid="0431" description="Intel Pro Video PC Camera" />
+    <product pid="0510" description="Digital Movie Creator" />
+    <product pid="0630" description="Pocket PC Camera" />
+    <product pid="07d3" description="BLOB boot loader firmware" />
+    <product pid="1111" description="PRO/Wireless 2011B 802.11b Adapter" />
+    <product pid="9890" description="82930 Test Board" />
+    <product pid="c013" description="Wireless HID Station" />
+  </vendor>
+  <vendor vid="047d" name="Kensington">
+    <product pid="1003" description="Orbit TrackBall" />
+    <product pid="1005" description="TurboBall" />
+    <product pid="101f" description="PocketMouse Pro" />
+    <product pid="2010" description="Wireless Presentation Remote" />
+    <product pid="4005" description="Gravis Eliminator GamePad Pro" />
+    <product pid="4006" description="Gravis Eliminator AfterShock" />
+    <product pid="4008" description="Gravis Destroyer TiltPad" />
+    <product pid="5002" description="VideoCam CABO II" />
+    <product pid="5003" description="VideoCam" />
+  </vendor>
+  <vendor vid="0951" name="Kingston Technology">
+    <product pid="0008" description="Kingston Technology USB Ethernet Adapter" />
+    <product pid="000a" description="KNU101TX 100baseTX Ethernet" />
+  </vendor>
+  <vendor vid="0458" name="KYE Systems Corp.">
+    <product pid="0001" description="Mouse" />
+    <product pid="0002" description="Genius NetMouse Pro" />
+    <product pid="0003" description="Genius NetScroll+" />
+    <product pid="000e" description="VideoCAM Web" />
+    <product pid="001a" description="Genius WebScroll+" />
+    <product pid="004c" description="Slimstar Pro Keyboard" />
+    <product pid="0100" description="EasyPen Tablet" />
+    <product pid="0101" description="CueCat" />
+    <product pid="1003" description="Genius VideoCam" />
+    <product pid="1004" description="Flight2000 F-23 Joystick" />
+    <product pid="100a" description="Aashima Technology Trust Sight Fighter Vibration Feedback Joystick" />
+    <product pid="2001" description="ColorPage-Vivid Pro Scanner" />
+    <product pid="2007" description="ColorPage-HR6 V2 Scanner" />
+    <product pid="2008" description="ColorPage-HR6 V2 Scanner" />
+    <product pid="2009" description="ColorPage-HR6A Scanner" />
+    <product pid="2011" description="ColorPage-Vivid3x Scanner" />
+    <product pid="2013" description="ColorPage-HR7 Scanner" />
+    <product pid="2015" description="ColorPage-HR7LE Scanner" />
+    <product pid="2016" description="ColorPage-HR6X Scanner" />
+    <product pid="301d" description="Genius MaxFire MiniPad" />
+    <product pid="7004" description="VideoCAM Express" />
+    <product pid="7007" description="VideoCAM Web" />
+    <product pid="7012" description="WebCAM USB2.0" />
+  </vendor>
+  <vendor vid="043d" name="Lexmark International, Inc.">
+    <product pid="0002" description="Optra E310 Printer" />
+    <product pid="0009" description="Optra S2450 Printer" />
+    <product pid="000c" description="Optra E312 Printer" />
+    <product pid="0017" description="Z32 printer" />
+    <product pid="0018" description="Z52 Printer" />
+    <product pid="001a" description="Z65 Printer" />
+    <product pid="001c" description="Kodak Personal Picture Maker 200 Printer" />
+    <product pid="001f" description="Kodak Personal Picture Maker 200 Card Reader" />
+    <product pid="0020" description="Z51 Printer" />
+    <product pid="0021" description="Z33 Printer" />
+    <product pid="002d" description="X70/X73 Scan/Print/Copy" />
+    <product pid="003d" description="X83 Scan/Print/Copy" />
+    <product pid="0057" description="Z35 Printer" />
+    <product pid="0060" description="X74/X75 Scanner" />
+    <product pid="0061" description="X74 Hub" />
+    <product pid="0069" description="X74/X75 Printer" />
+    <product pid="0072" description="X6170 Printer" />
+  </vendor>
+  <vendor vid="043e" name="LG Electronics USA, Inc.">
+    <product pid="42bd" description="Flatron 795FT Plus Monitor" />
+    <product pid="4a4d" description="Flatron 915FT Plus Monitor" />
+    <product pid="7001" description="MF-PD100 Soul Digital MP3 Player" />
+    <product pid="7013" description="MP3 Player" />
+    <product pid="8484" description="LPC-U30 Webcam II" />
+    <product pid="8585" description="LPC-UC35 Webcam" />
+    <product pid="8888" description="USB LG Electronics VCS Camera II(LPC-U20)" />
+    <product pid="9803" description="eHome Infrared Receiver" />
+    <product pid="9804" description="LG DMB Receiver Control" />
+    <product pid="9c01" description="LGE USB Sync" />
+  </vendor>
+  <vendor vid="046d" name="Logitech, Inc.">
+    <product pid="0203" description="M2452 Keyboard" />
+    <product pid="0301" description="M4848 Mouse" />
+    <product pid="040f" description="Logitech/Storm PageScan" />
+    <product pid="0801" description="QuickCam Home" />
+    <product pid="0810" description="QuickCam Pro" />
+    <product pid="0840" description="QuickCam Express" />
+    <product pid="0850" description="QuickCam Web" />
+    <product pid="0870" description="QuickCam Express" />
+    <product pid="0890" description="QuickCam Traveler" />
+    <product pid="08a0" description="QuickCam IM" />
+    <product pid="08a2" description="Labtec WebCam Pro" />
+    <product pid="08b0" description="QuickCam 3000 Pro [pwc]" />
+    <product pid="08b1" description="QuickCam Notebook Pro" />
+    <product pid="08b2" description="QuickCam Pro 4000" />
+    <product pid="08b3" description="QuickCam Zoom" />
+    <product pid="08b4" description="QuickCam Zoom" />
+    <product pid="08da" description="QuickCam Messanger" />
+    <product pid="08f0" description="QuickCam Messenger" />
+    <product pid="0900" description="ClickSmart 310" />
+    <product pid="0901" description="ClickSmart 510" />
+    <product pid="0903" description="ClickSmart 820" />
+    <product pid="0905" description="ClickSmart 820" />
+    <product pid="0920" description="QuickCam Express" />
+    <product pid="0921" description="Labtec WebCam" />
+    <product pid="0928" description="Quickcam Express" />
+    <product pid="092a" description="QuickCam for Notebooks" />
+    <product pid="0950" description="Pocket Camera" />
+    <product pid="0960" description="ClickSmart 420" />
+    <product pid="0970" description="Pocket750" />
+    <product pid="c000" description="N43 [Pilot Mouse]" />
+    <product pid="c001" description="N48/M-BB48 [FirstMouse Plus]" />
+    <product pid="c002" description="M-BA47 [MouseMan Plus]" />
+    <product pid="c004" description="WingMan Gaming Mouse" />
+    <product pid="c00b" description="MouseMan Wheel" />
+    <product pid="c00c" description="Optical Wheel Mouse" />
+    <product pid="c00e" description="M-BJ69 Optical Wheel Mouse" />
+    <product pid="c012" description="Optical Mouse" />
+    <product pid="c016" description="M-UV69a Optical Wheel Mouse" />
+    <product pid="c01b" description="MX310 Optical Mouse" />
+    <product pid="c01e" description="MX518 Optical Mouse" />
+    <product pid="c025" description="MX500 Optical Mouse" />
+    <product pid="c030" description="iFeel Mouse" />
+    <product pid="c032" description="MouseMan iFeel" />
+    <product pid="c03e" description="Premium Optical Wheel Mouse" />
+    <product pid="c202" description="WingMan Formula" />
+    <product pid="c207" description="WingMan Extreme Digital 3D" />
+    <product pid="c208" description="WingMan Gamepad Extreme" />
+    <product pid="c209" description="WingMan Gamepad" />
+    <product pid="c20a" description="WingMan RumblePad" />
+    <product pid="c20c" description="WingMan Precision" />
+    <product pid="c211" description="iTouch Cordless Reciever" />
+    <product pid="c216" description="Dual Action Gamepad" />
+    <product pid="c281" description="WingMan Force" />
+    <product pid="c283" description="WingMan Force 3D" />
+    <product pid="c285" description="WingMan Strike Force 3D" />
+    <product pid="c291" description="WingMan Formula Force" />
+    <product pid="c293" description="WingMan Formula Force GP" />
+    <product pid="c295" description="Momo Force Steering Wheel" />
+    <product pid="c2a0" description="Wingman Force Feedback Mouse" />
+    <product pid="c303" description="iTouch Keyboard" />
+    <product pid="c308" description="Internet Navigator Keyboard" />
+    <product pid="c309" description="Internet Keyboard" />
+    <product pid="c401" description="TrackMan Marble Wheel" />
+    <product pid="c402" description="Marble Mouse (2-button)" />
+    <product pid="c404" description="TrackMan Wheel" />
+    <product pid="c408" description="Marble Mouse (4-button)" />
+    <product pid="c501" description="Cordless Mouse Receiver" />
+    <product pid="c503" description="Cordless Mouse+Keyboard Receiver" />
+    <product pid="c504" description="Cordless Mouse+Keyboard Receiver" />
+    <product pid="c505" description="Cordless Mouse+Keyboard Receiver" />
+    <product pid="c506" description="MX-700 Cordless Mouse Receiver" />
+    <product pid="c50b" description="Cordless Desktop Optical" />
+    <product pid="c50e" description="MX-1000 Cordless Mouse Receiver" />
+    <product pid="d001" description="QuickCam Pro" />
+  </vendor>
+  <vendor vid="045e" name="Microsoft">
+    <product pid="007e" description="Bluetooth Microsoft Kablosuz Verici/Alıcı" />
+    <product pid="009c" description="Bluetooth 2.0 için Microsoft Kablosuz Verici/Alıcı" />
+    <product pid="0007" description="SideWinder Game Pad" />
+    <product pid="0008" description="SideWinder Precision Pro" />
+    <product pid="0009" description="IntelliMouse" />
+    <product pid="000b" description="Natural Keyboard Elite" />
+    <product pid="0014" description="Digital Sound System 80" />
+    <product pid="001a" description="SideWinder Precision Racing Wheel" />
+    <product pid="001b" description="SideWinder Force Feedback 2 Joystick" />
+    <product pid="001d" description="Natural Keyboard Pro" />
+    <product pid="001e" description="IntelliMouse Explorer" />
+    <product pid="0023" description="Trackball Optical" />
+    <product pid="0024" description="Trackball Explorer" />
+    <product pid="0025" description="IntelliEye Mouse" />
+    <product pid="0026" description="SideWinder GamePad Pro" />
+    <product pid="0027" description="SideWinder PnP GamePad" />
+    <product pid="0028" description="SideWinder Dual Strike" />
+    <product pid="0029" description="IntelliMouse Optical" />
+    <product pid="002b" description="Internet Keyboard Pro" />
+    <product pid="0033" description="Sidewinder Strategic Commander" />
+    <product pid="0034" description="SideWinder Force Feedback Wheel" />
+    <product pid="0038" description="SideWinder Precision 2" />
+    <product pid="0039" description="IntelliMouse Optical" />
+    <product pid="003b" description="SideWinder Game Voice" />
+    <product pid="003c" description="SideWinder Joystick" />
+    <product pid="0040" description="Wheel Mouse Optical" />
+    <product pid="0047" description="IntelliMouse Explorer 3.0" />
+    <product pid="0059" description="Wireless IntelliMouse Explorer" />
+    <product pid="006e" description="MN510 802.11b Adapter" />
+    <product pid="007d" description="Notebook Optical Mouse" />
+    <product pid="0083" description="Basic Optical Mouse" />
+    <product pid="008a" description="Wireless Keyboard and Mouse" />
+    <product pid="008c" description="Wireless Intellimouse Explorer 2.0" />
+    <product pid="00b9" description="Wireless Optical Mouse 3.0" />
+    <product pid="00bd" description="Fingerprint Reader" />
+    <product pid="0284" description="Xbox DVD Playback Kit" />
+    <product pid="0288" description="Xbox Controller S Hub" />
+    <product pid="0289" description="Xbox Controller S" />
+  </vendor>
+  <vendor vid="0db0" name="Micro Star International">
+    <product pid="1967" description="Bluetooth Dongle" />
+    <product pid="4011" description="Medion Flash XL V2.0 Card Reader" />
+    <product pid="697a" description="Bluetooth Dongle" />
+    <product pid="6982" description="Medion Flash XL V2.7A Card Reader" />
+  </vendor>
+  <vendor vid="10ab" name="Motion Computing">
+    <product pid="1002" description="Motion Computing USB Bluetooth Aygıtı" />
+  </vendor>
+  <vendor vid="055f" name="Mustek Systems, Inc.">
+    <product pid="0001" description="ScanExpress 1200 CU" />
+    <product pid="0002" description="ScanExpress 600 CU" />
+    <product pid="0003" description="ScanExpress 1200 USB" />
+    <product pid="0006" description="ScanExpress 1200 UB" />
+    <product pid="0007" description="ScanExpress 1200 USB Plus" />
+    <product pid="0008" description="ScanExpress 1200 CU Plus" />
+    <product pid="0010" description="BearPaw 1200F" />
+    <product pid="0210" description="ScanExpress A3 USB" />
+    <product pid="0218" description="BearPaw 2400 TA" />
+    <product pid="0219" description="BearPaw 2400 TA Plus" />
+    <product pid="021a" description="BearPaw 2448 TA Plus" />
+    <product pid="021c" description="BearPaw 1200 CU Plus" />
+    <product pid="021d" description="BearPaw 2400 CU Plus" />
+    <product pid="021e" description="BearPaw 1200 TA/CS" />
+    <product pid="0400" description="BearPaw 2400 TA Pro" />
+    <product pid="0401" description="P 3600 A3 Pro" />
+    <product pid="0873" description="ScanExpress 600 USB" />
+    <product pid="1000" description="BearPaw 4800 TA Pro" />
+    <product pid="a350" description="gSmart 350" />
+    <product pid="a800" description="MDC 800 Camera" />
+    <product pid="b500" description="MDC 3000 Camera" />
+    <product pid="c200" description="gSmart 300" />
+    <product pid="c220" description="gSmart mini" />
+    <product pid="c360" description="Mustek DV 4000" />
+    <product pid="c420" description="gSmart mini 2" />
+    <product pid="c440" description="Mustek DV 3000" />
+    <product pid="c520" description="gSmart mini 3" />
+    <product pid="c530" description="Mustek Gsmart LCD 2" />
+    <product pid="c650" description="Mustek MDC5500Z" />
+    <product pid="d001" description="WCam 300" />
+  </vendor>
+  <vendor vid="0471" name="Philips">
+    <product pid="0101" description="DSS350 Digital Speaker System" />
+    <product pid="0104" description="DSS330 Digital Speaker System [uda1321]" />
+    <product pid="0201" description="Hub" />
+    <product pid="0222" description="Creative Nomad Jukebox" />
+    <product pid="0302" description="PCA645VC WebCam [pwc]" />
+    <product pid="0303" description="PCA646VC WebCam [pwc]" />
+    <product pid="0304" description="Askey VC010 WebCam [pwc]" />
+    <product pid="0307" description="PCVC675K WebCam [pwc]" />
+    <product pid="0308" description="PCVC680K WebCam [pwc]" />
+    <product pid="030c" description="PCVC690K WebCam [pwc]" />
+    <product pid="0310" description="PCVC730K WebCam [pwc]" />
+    <product pid="0311" description="PCVC740K ToUcam Pro [pwc]" />
+    <product pid="0312" description="PCVC750K WebCam [pwc]" />
+    <product pid="0471" description="Digital Speaker System" />
+    <product pid="0601" description="OVU1020 IR Dongle (Kbd+Mouse)" />
+    <product pid="0701" description="150P1 TFT Display" />
+    <product pid="0811" description="JR24 CDRW" />
+    <product pid="1120" description="Creative Rhomba MP3 player" />
+    <product pid="1801" description="Diva MP3 player" />
+  </vendor>
+  <vendor vid="0461" name="Primax Electronics, Ltd">
+    <product pid="0300" description="G2-300 Scanner" />
+    <product pid="0301" description="G2E-300 Scanner" />
+    <product pid="0302" description="G2-300 #2 Scanner" />
+    <product pid="0303" description="G2E-300 #2 Scanner" />
+    <product pid="0340" description="Colorado 9600 Scanner" />
+    <product pid="0341" description="Colorado 600u Scanner" />
+    <product pid="0345" description="Visioneer 6200 Scanner" />
+    <product pid="0346" description="Memorex Maxx 6136u Scanner" />
+    <product pid="0347" description="Primascan Colorado 2600u/Visioneer 4400 Scanner" />
+    <product pid="0360" description="Colorado 19200 Scanner" />
+    <product pid="0361" description="Colorado 1200u Scanner" />
+    <product pid="0364" description="LG Electronics Scanworks 600U Scanner" />
+    <product pid="0371" description="Visioneer Onetouch 8920 Scanner" />
+    <product pid="0377" description="Medion MD 5345 Scanner" />
+    <product pid="037b" description="Medion MD 6190 Scanner" />
+    <product pid="0380" description="G2-600 Scanner" />
+    <product pid="0381" description="ReadyScan 636i Scanner" />
+    <product pid="0382" description="G2-600 #2 Scanner" />
+    <product pid="0383" description="G2E-600 Scanner" />
+    <product pid="0813" description="IBM UltraPort Camera" />
+    <product pid="0815" description="Micro Innovations WebCam" />
+    <product pid="0819" description="Fujifilm IX-30 Camera [webcam mode]" />
+    <product pid="081a" description="Fujifilm IX-30 Camera [storage mode]" />
+    <product pid="081c" description="Elitegroup ECS-C11 Camera" />
+    <product pid="081d" description="Elitegroup ECS-C11 Storage" />
+    <product pid="4d01" description="Comfort Keyboard" />
+    <product pid="4d02" description="Mouse-in-a-Box" />
+    <product pid="4d03" description=" Kensington Mouse-in-a-box" />
+    <product pid="4d04" description="Mouse" />
+  </vendor>
+  <vendor vid="04e8" name="Samsung Electronics Co., Ltd">
+    <product pid="0110" description="Connect3D Flash Drive" />
+    <product pid="0111" description="Connect3D Flash Drive" />
+    <product pid="1003" description="MP3 Player and Recorder" />
+    <product pid="300c" description="ML-1210 Printer" />
+    <product pid="324c" description="ML-1740 Printer" />
+    <product pid="3260" description="CLP-510 Color Laser Printer" />
+    <product pid="5a03" description="Yepp MP3 Player" />
+    <product pid="6601" description="Z100 Mobile Phone" />
+  </vendor>
+  <vendor vid="0781" name="SanDisk Corp">
+    <product pid="0001" description="SDDR-05a ImageMate CompactFlash Reader" />
+    <product pid="0002" description="SDDR-31 ImageMate II CompactFlash Reader" />
+    <product pid="0005" description="SDDR-05b (CF II) ImageMate CompactFlash Reader" />
+    <product pid="0200" description="SDDR-09 (SSFDC) ImageMate SmartMedia Reader [eusb]" />
+    <product pid="0400" description="SecureMate SD/MMC Reader" />
+    <product pid="0621" description="SDDR-86 Imagemate 6-in-1 Reader" />
+    <product pid="0810" description="SDDR-75 ImageMate CF-SM Reader" />
+    <product pid="0830" description="ImageMate CF/MMC/SD Reader" />
+    <product pid="5150" description="SDCZ2 Cruzer Mini Flash Drive (thin)" />
+    <product pid="5151" description="Cruzer Micro 256/512MB Flash Drive" />
+    <product pid="7103" description="Sandisk Cruzer Mini 128MB Memory Card" />
+    <product pid="7104" description="Cruzer Micro Mini 256MB Flash Drive" />
+    <product pid="7112" description="Cruzer Micro 128MB Flash Drive" />
+    <product pid="7113" description="Cruzer Micro 256MB Flash Drive" />
+    <product pid="8185" description="SDCZ2 Cruzer Mini Flash Drive (older, thick)" />
+    <product pid="8889" description="SDDR-88 Imagemate 8-in-1 Reader" />
+  </vendor>
+  <vendor vid="0457" name="Silicon Integrated Systems Corp.">
+    <product pid="0150" description="Super Talent 1GB Flash Drive" />
+    <product pid="0151" description="Super Flash 1GB Flash Drive" />
+  </vendor>
+  <vendor vid="0c10" name="Silicon Wave">
+    <product pid="0000" description="Silicon Wave Bluetooth Kablosuz Bağdaştırıcı" />
+    <product pid="0001" description="SB Bluetooth Kablosuz Bağdaştırıcı" />
+  </vendor>
+  <vendor vid="044c" name="Sony Corp.">
+    <product pid="0010" description="DSC-S30/S70/S75/F505V/F505/FD92 Cybershot/Mavica Digital Camera" />
+    <product pid="0023" description="CD Writer" />
+    <product pid="0024" description="Mavica CD-1000 Camera" />
+    <product pid="0025" description="NW-MS7 Walkman MemoryStick Reader" />
+    <product pid="002d" description="MSAC-US1 MemoryStick Reader" />
+    <product pid="002e" description="Sony HandyCam MemoryStick Reader" />
+    <product pid="0032" description="MemoryStick MSC-U01 Reader" />
+    <product pid="0038" description="Clie PEG-S300/D PalmOS PDA" />
+    <product pid="004e" description="DSC-xxx (ptp)" />
+    <product pid="0058" description="Clie PEG-N7x0C PalmOS PDA Mass Storage" />
+    <product pid="0066" description="Clie PEG-N7x0C/PEG-T425 PalmOS PDA Serial" />
+    <product pid="0069" description="Memorystick MSC-U03 Reader" />
+    <product pid="006d" description="Clie PEG-T425 PDA Mass Storage" />
+    <product pid="008b" description="Micro Vault 64M Mass Storage" />
+    <product pid="0099" description="Clie NR70 PDA Mass Storage" />
+    <product pid="009a" description="Clie NR70 PDA Serial" />
+    <product pid="00c0" description="Handycam DCR-30" />
+    <product pid="00c8" description="MZ-N710 Minidisc Walkman" />
+    <product pid="00ca" description="MZ-DN430 Minidisc Walkman" />
+    <product pid="00cb" description="MSAC-US20 Memory Stick Reader" />
+    <product pid="0105" description="Micro Vault Hub" />
+    <product pid="0107" description="VCC-U01 Visual Communication Camera" />
+    <product pid="0144" description="Clie PEG-TH55 PDA" />
+    <product pid="014c" description="Aiwa AM-NX9 Net MD Music Recorder MDLP" />
+    <product pid="014d" description="Memory Stick Reader/Writer" />
+    <product pid="0169" description="Clie PEG-TJ35 PDA Serial" />
+    <product pid="016a" description="Clie PEG-TJ35 PDA Mass Storage" />
+    <product pid="01c3" description="NW-E55 Network Walkman" />
+    <product pid="01d0" description="DVD+RW External Drive DRU-700A" />
+    <product pid="023b" description="DVD+RW External Drive DRU-800UL" />
+  </vendor>
+  <vendor vid="04bf" name="TDK Corp.">
+    <product pid="0100" description="MediaReader CF" />
+    <product pid="0319" description="TDK Bluetooth USB Bağdaştırıcı" />
+    <product pid="04bf" description="TDK Bluetooth USB Bağdaştırıcı" />
+  </vendor>
+  <vendor vid="0930" name="TOSHIBA">
+    <product pid="6519" description="Kingston DataTraveler 2.0 USB Stick" />
+    <product pid="6533" description="512M USB Stick" />
+  </vendor>
+  <vendor vid="04c1" name="U.S. Robotics (3Com)">
+    <product pid="0082" description="OfficeConnect Analog Modem" />
+    <product pid="008f" description="Pro ISDN TA" />
+    <product pid="009d" description="HomeConnect WebCam [vicam]" />
+    <product pid="3021" description="56k Voice FaxModem Pro" />
+  </vendor>
+  <vendor vid="0499" name="Yamaha Corp.">
+    <product pid="6001" description="CRW2200UX Lightspeed 2 External CD-RW Drive" />
+  </vendor>
+  <vendor vid="0b7a" name="Zeevo">
+    <product pid="07d0" description="Zeevo Bluetooth Çözümü" />
+  </vendor>
+</vendors>

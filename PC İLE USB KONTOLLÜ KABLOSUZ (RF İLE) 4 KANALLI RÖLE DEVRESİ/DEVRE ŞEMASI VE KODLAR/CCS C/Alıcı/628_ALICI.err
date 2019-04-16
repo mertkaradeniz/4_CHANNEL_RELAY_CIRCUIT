@@ -1,0 +1,4 @@
+>>> Warning 203 "628_ALICI.c" Line 49(1,1): Condition always TRUE
+      Memory usage:   ROM=10%      RAM=3% - 3%
+      0 Errors,  1 Warnings.
+Build Successful.

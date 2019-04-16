@@ -1,0 +1,70 @@
+[PROJECT]
+Target=4550_Verici.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+Development_Mode=
+ToolSuite=CCS
+[Target Data]
+FileList=4550_Verici.c
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[Directories]
+Include=C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Program Files\PICC\drivers\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Users\JMTech\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\TASARIM\CCS C\Verici\4550\;C:\Users\Melisa\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\;C:\Users\Melisa\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\C:\Program Files\PICC\devices\;C:\Users\Melisa\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Users\Melisa\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Users\Melisa\Desktop\HAVAYA YAZI YAZMA DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\C:\Program Files\PICC\devices\;C:\Users\Melisa\Desktop\HAVAYA YC:\Program Files\PICC\devices\;C:\Users\Melisa\Desktop\HAVAYA Y\
+Library=
+LinkerScript=
+[4550_Verici.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=4550_Verici.c
+[Opened Files]
+1=4550_Verici.c
+2=Usb_Driver.h
+3=..\2550\2550_Verici.c
+4=
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=0
+stayupne=3
+stayupoe=0
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[CompilerVersion]
+Fixed=
+[Documentation]
+1=C:\Users\Melisa\Desktop\PC ÝLE USB KONTOLLÜ KABLOSUZ (RF ÝLE) 4 KANALLI RÖLE DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\4550_Verici Notes.txt
+1T=4550_Verici Notes.txt
+1E=
+1W=0
+Count=3
+2=C:\Users\Melisa\Desktop\PC ÝLE USB KONTOLLÜ KABLOSUZ (RF ÝLE) 4 KANALLI RÖLE DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\__history\4550_Verici.c.~205~
+2T=4550_Verici.c.~205~
+2E=
+2W=0
+3=C:\Users\Melisa\Desktop\PC ÝLE USB KONTOLLÜ KABLOSUZ (RF ÝLE) 4 KANALLI RÖLE DEVRESÝ\DEVRE ÞEMASI VE KODLAR\CCS C\Verici\4550\__history\4550_Verici.c.~204~
+3T=4550_Verici.c.~204~
+3E=
+3W=1
+[Units]
+Count=1
+1=4550_Verici (main)
